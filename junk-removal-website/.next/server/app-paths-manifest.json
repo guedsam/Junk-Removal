@@ -1,9 +1,0 @@
-{
-  "/not-found": "app/not-found.js",
-  "/blog/page": "app/blog/page.js",
-  "/coverage-areas/page": "app/coverage-areas/page.js",
-  "/about/page": "app/about/page.js",
-  "/faqs/page": "app/faqs/page.js",
-  "/blog/junk-removal-vs-dumpster-rental-comparison/page": "app/blog/junk-removal-vs-dumpster-rental-comparison/page.js",
-  "/contact/page": "app/contact/page.js"
-}
