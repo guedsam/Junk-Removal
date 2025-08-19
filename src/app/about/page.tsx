@@ -85,7 +85,7 @@ export default function AboutPage() {
             </div>
             <div className="relative">
               <img 
-                src="/api/placeholder/600/400" 
+                src="/images/junk-removal/oregon-city-junk-removal-team.webp" 
                 alt="Oregon City Junk Removal team with truck"
                 className="w-full h-80 object-cover rounded-2xl shadow-2xl"
               />
@@ -100,7 +100,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div>
               <img 
-                src="/api/placeholder/500/400" 
+                src="/images/junk-removal/founders-oregon-city-junk-removal.webp" 
                 alt="Founders of Oregon City Junk Removal"
                 className="w-full h-96 object-cover rounded-xl shadow-lg"
               />
@@ -260,7 +260,7 @@ export default function AboutPage() {
             </div>
             <div>
               <img 
-                src="/api/placeholder/500/400" 
+                src="/images/junk-removal/eco-friendly-recycling-portland.webp" 
                 alt="Recycling and donation process"
                 className="w-full h-96 object-cover rounded-xl shadow-lg"
               />
@@ -284,7 +284,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
             <div className="bg-white rounded-xl p-6 shadow-sm text-center">
               <img 
-                src="/api/placeholder/200/200" 
+                src="/images/junk-removal/mike-thompson-cofounder.webp" 
                 alt="Mike Thompson, Co-Founder"
                 className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
               />
@@ -298,7 +298,7 @@ export default function AboutPage() {
 
             <div className="bg-white rounded-xl p-6 shadow-sm text-center">
               <img 
-                src="/api/placeholder/200/200" 
+                src="/images/junk-removal/sarah-thompson-cofounder.webp" 
                 alt="Sarah Thompson, Co-Founder"
                 className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
               />
@@ -312,7 +312,7 @@ export default function AboutPage() {
 
             <div className="bg-white rounded-xl p-6 shadow-sm text-center">
               <img 
-                src="/api/placeholder/200/200" 
+                src="/images/junk-removal/professional-junk-removal-crew.webp" 
                 alt="Team of junk removal professionals"
                 className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
               />
@@ -341,8 +341,8 @@ export default function AboutPage() {
             <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">
               Get Your Free Quote
             </Link>
-            <a href="tel:+15035551234" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
-              Call (503) 555-1234
+            <a href="tel:+15037532329" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
+              Call (503) 753-2329
             </a>
           </div>
         </div>

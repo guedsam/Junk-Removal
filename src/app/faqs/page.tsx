@@ -22,7 +22,7 @@ export default function FAQsPage() {
         },
         {
           question: 'Do you provide free estimates?',
-          answer: 'Yes! We offer completely free, no-obligation estimates. You can get a quote by calling us at (503) 555-1234, filling out our online form, or having our team assess the items in person. We believe in transparent pricing with no surprises.'
+          answer: 'Yes! We offer completely free, no-obligation estimates. You can get a quote by calling us at (503) 753-2329, filling out our online form, or having our team assess the items in person. We believe in transparent pricing with no surprises.'
         },
         {
           question: 'Are there any hidden fees or extra charges?',
@@ -136,8 +136,8 @@ export default function FAQsPage() {
             <Link href="/contact" className="btn-primary">
               Get Free Quote
             </Link>
-            <a href="tel:+15035551234" className="btn-secondary">
-              Call (503) 555-1234
+            <a href="tel:+15037532329" className="btn-secondary">
+              Call (503) 753-2329
             </a>
           </div>
         </div>
@@ -192,8 +192,8 @@ export default function FAQsPage() {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Call Us</h3>
                 <p className="text-gray-600 mb-2">Speak directly with our team</p>
-                <a href="tel:+15035551234" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  (503) 555-1234
+                <a href="tel:+15037532329" className="text-primary-600 hover:text-primary-700 font-semibold">
+                  (503) 753-2329
                 </a>
               </div>
 
@@ -277,8 +277,8 @@ export default function FAQsPage() {
             <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">
               Get Your Free Quote
             </Link>
-            <a href="tel:+15035551234" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
-              Call (503) 555-1234
+            <a href="tel:+15037532329" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
+              Call (503) 753-2329
             </a>
           </div>
         </div>

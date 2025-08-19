@@ -138,8 +138,8 @@ export default function CoverageAreasPage() {
             <Link href="/contact" className="btn-primary">
               Get Free Quote
             </Link>
-            <a href="tel:+15035551234" className="btn-secondary">
-              Call (503) 555-1234
+            <a href="tel:+15037532329" className="btn-secondary">
+              Call (503) 753-2329
             </a>
           </div>
         </div>
@@ -277,7 +277,7 @@ export default function CoverageAreasPage() {
           <div className="bg-white rounded-2xl p-8 shadow-lg">
             <div className="aspect-w-16 aspect-h-9 mb-6">
               <img 
-                src="/api/placeholder/800/500" 
+                src="/images/junk-removal/portland-metro-service-area-map.webp" 
                 alt="Oregon City Junk Removal service area map showing Portland metro coverage"
                 className="w-full h-96 object-cover rounded-lg"
               />
@@ -437,8 +437,8 @@ export default function CoverageAreasPage() {
             <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">
               Get Your Free Quote
             </Link>
-            <a href="tel:+15035551234" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
-              Call (503) 555-1234
+            <a href="tel:+15037532329" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
+              Call (503) 753-2329
             </a>
           </div>
         </div>
