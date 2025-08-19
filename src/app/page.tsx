@@ -151,7 +151,7 @@ export default function HomePage() {
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-2xl p-8">
                 <img 
-                  src="/images/junk-removal/hero-junk-removal.jpg" 
+                  src="/images/junk-removal/portland-junk-removal-team.webp" 
                   alt="Professional junk removal team in Oregon City and Portland"
                   className="w-full h-80 object-cover rounded-lg"
                 />
@@ -286,7 +286,7 @@ export default function HomePage() {
             {blogPosts.map((post, index) => (
               <article key={index} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <img 
-                  src={`/images/junk-removal/blog-${index + 1}.jpg`}
+                  src={`/images/junk-removal/${index === 0 ? 'oregon-city-junk-hauling.webp' : index === 1 ? 'eco-friendly-disposal-portland.webp' : 'furniture-removal-oregon.webp'}`}
                   alt={post.title}
                   className="w-full h-48 object-cover"
                 />

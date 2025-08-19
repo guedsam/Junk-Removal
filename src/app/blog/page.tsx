@@ -1,11 +1,8 @@
+'use client'
+
 import { Metadata } from 'next'
 import Link from 'next/link'
-
-export const metadata: Metadata = {
-  title: 'Junk Removal Blog | Tips & Guides | Oregon City Junk Removal',
-  description: 'Expert junk removal tips, eco-friendly disposal guides, and local insights for Oregon City and Portland residents. Learn about professional junk hauling services.',
-  keywords: 'junk removal blog, Oregon City junk removal tips, Portland junk hauling, eco-friendly disposal, junk removal guides',
-}
+import { useState } from 'react'
 
 const blogPosts = [
   {
@@ -14,7 +11,8 @@ const blogPosts = [
     excerpt: 'Discover why professional junk removal services in Portland save you time, money, and hassle compared to DIY approaches.',
     date: 'December 15, 2024',
     readTime: '5 min read',
-    slug: 'top-5-reasons-hire-junk-removal-portland'
+    slug: 'top-5-reasons-hire-junk-removal-portland',
+    image: 'oregon-city-junk-hauling.webp'
   },
   {
     id: 2,
@@ -22,7 +20,8 @@ const blogPosts = [
     excerpt: 'Learn about our sustainable junk removal practices and how we responsibly dispose of items while protecting Oregon\'s environment.',
     date: 'December 10, 2024',
     readTime: '6 min read',
-    slug: 'eco-friendly-junk-disposal-oregon-green'
+    slug: 'eco-friendly-junk-disposal-oregon-green',
+    image: 'eco-friendly-disposal-portland.webp'
   },
   {
     id: 3,
@@ -30,7 +29,8 @@ const blogPosts = [
     excerpt: 'Compare junk removal services with dumpster rentals to determine the best solution for your Oregon City or Portland project.',
     date: 'December 5, 2024',
     readTime: '7 min read',
-    slug: 'junk-removal-vs-dumpster-rental-comparison'
+    slug: 'junk-removal-vs-dumpster-rental-comparison',
+    image: 'furniture-removal-oregon.webp'
   },
   {
     id: 4,
@@ -38,7 +38,8 @@ const blogPosts = [
     excerpt: 'Get ready for your junk removal appointment with our comprehensive preparation guide. Learn how to sort, organize, and prepare your items for efficient pickup.',
     date: 'December 20, 2024',
     readTime: '8 min read',
-    slug: 'how-to-prepare-junk-removal-day'
+    slug: 'how-to-prepare-junk-removal-day',
+    image: 'junk-removal-preparation-portland.webp'
   },
   {
     id: 5,
@@ -46,7 +47,8 @@ const blogPosts = [
     excerpt: 'Compassionate, professional estate cleanout services to help families during difficult times. We handle everything with care and respect.',
     date: 'December 18, 2024',
     readTime: '10 min read',
-    slug: 'estate-cleanout-services-oregon-city'
+    slug: 'estate-cleanout-services-oregon-city',
+    image: 'estate-cleanout-oregon-city.webp'
   },
   {
     id: 6,
@@ -54,7 +56,8 @@ const blogPosts = [
     excerpt: 'Professional construction debris removal services for contractors, builders, and homeowners. Safe, efficient cleanup of all construction waste.',
     date: 'December 12, 2024',
     readTime: '9 min read',
-    slug: 'construction-debris-removal-portland'
+    slug: 'construction-debris-removal-portland',
+    image: 'construction-debris-portland.webp'
   },
   {
     id: 7,
@@ -62,7 +65,8 @@ const blogPosts = [
     excerpt: 'Transform your Portland home this spring with our comprehensive junk removal guide. Learn room-by-room strategies, eco-friendly disposal tips, and cost-saving techniques.',
     date: 'January 15, 2025',
     readTime: '8 min read',
-    slug: 'spring-cleaning-junk-removal-guide'
+    slug: 'spring-cleaning-junk-removal-guide',
+    image: 'spring-cleaning-portland.webp'
   },
   {
     id: 8,
@@ -70,7 +74,8 @@ const blogPosts = [
     excerpt: 'Professional, discreet hoarding cleanup services that help restore homes and lives with dignity and care. Learn about our compassionate approach.',
     date: 'January 10, 2025',
     readTime: '12 min read',
-    slug: 'hoarding-cleanup-services-portland-oregon'
+    slug: 'hoarding-cleanup-services-portland-oregon',
+    image: 'hoarding-cleanup-portland.webp'
   },
   {
     id: 9,
@@ -78,11 +83,44 @@ const blogPosts = [
     excerpt: 'Streamline your business operations with efficient, professional commercial junk removal services for offices, retail spaces, and warehouses.',
     date: 'January 5, 2025',
     readTime: '11 min read',
-    slug: 'office-cleanout-commercial-junk-removal-portland'
+    slug: 'office-cleanout-commercial-junk-removal-portland',
+    image: 'commercial-junk-removal-portland.webp'
+  },
+  {
+    id: 10,
+    title: 'Basement Cleanout Services in Portland Oregon: Reclaim Your Space',
+    excerpt: 'Professional basement cleanout services to transform your cluttered basement into functional, organized space. Safe removal of old furniture, appliances, and clutter.',
+    date: 'January 20, 2025',
+    readTime: '8 min read',
+    slug: 'basement-cleanout-services-portland-oregon',
+    image: 'basement-cleanout-portland.webp'
+  },
+  {
+    id: 11,
+    title: 'Garage Cleanout Services in Oregon City: Reclaim Your Space',
+    excerpt: 'Transform your cluttered garage into organized, functional space with professional garage cleanout services. Same-day service available in Oregon City and Portland.',
+    date: 'January 25, 2025',
+    readTime: '7 min read',
+    slug: 'garage-cleanout-services-oregon-city',
+    image: 'garage-cleanout-oregon-city.webp'
   }
 ]
 
+const POSTS_PER_PAGE = 9
+
 export default function BlogPage() {
+  const [currentPage, setCurrentPage] = useState(1)
+  
+  const totalPages = Math.ceil(blogPosts.length / POSTS_PER_PAGE)
+  const startIndex = (currentPage - 1) * POSTS_PER_PAGE
+  const endIndex = startIndex + POSTS_PER_PAGE
+  const currentPosts = blogPosts.slice(startIndex, endIndex)
+
+  const goToPage = (page: number) => {
+    setCurrentPage(page)
+    window.scrollTo({ top: 0, behavior: 'smooth' })
+  }
+
   return (
     <div className="min-h-screen bg-gray-50">
       {/* Hero Section */}
@@ -104,9 +142,15 @@ export default function BlogPage() {
       <section className="py-16">
         <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {blogPosts.map((post) => (
+            {currentPosts.map((post) => (
               <article key={post.id} className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition-shadow">
-                <div className="h-48 bg-gradient-to-br from-primary-500 to-primary-600"></div>
+                <div className="h-48 overflow-hidden">
+                  <img 
+                    src={`/images/junk-removal/${post.image}`}
+                    alt={post.title}
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
                 <div className="p-6">
                   <div className="flex items-center text-sm text-gray-500 mb-3">
                     <span>{post.date}</span>
@@ -131,6 +175,59 @@ export default function BlogPage() {
                 </div>
               </article>
             ))}
+          </div>
+
+          {/* Pagination */}
+          {totalPages > 1 && (
+            <div className="mt-12 flex justify-center">
+              <nav className="flex items-center space-x-2">
+                {/* Previous Button */}
+                <button
+                  onClick={() => goToPage(currentPage - 1)}
+                  disabled={currentPage === 1}
+                  className={`px-3 py-2 rounded-lg font-medium ${
+                    currentPage === 1
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
+                  }`}
+                >
+                  Previous
+                </button>
+
+                {/* Page Numbers */}
+                {Array.from({ length: totalPages }, (_, i) => i + 1).map((page) => (
+                  <button
+                    key={page}
+                    onClick={() => goToPage(page)}
+                    className={`px-3 py-2 rounded-lg font-medium ${
+                      currentPage === page
+                        ? 'bg-primary-600 text-white'
+                        : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
+                    }`}
+                  >
+                    {page}
+                  </button>
+                ))}
+
+                {/* Next Button */}
+                <button
+                  onClick={() => goToPage(currentPage + 1)}
+                  disabled={currentPage === totalPages}
+                  className={`px-3 py-2 rounded-lg font-medium ${
+                    currentPage === totalPages
+                      ? 'bg-gray-100 text-gray-400 cursor-not-allowed'
+                      : 'bg-white text-gray-700 hover:bg-gray-50 border border-gray-300'
+                  }`}
+                >
+                  Next
+                </button>
+              </nav>
+            </div>
+          )}
+
+          {/* Page Info */}
+          <div className="mt-6 text-center text-gray-600">
+            Showing {startIndex + 1}-{Math.min(endIndex, blogPosts.length)} of {blogPosts.length} articles
           </div>
         </div>
       </section>
