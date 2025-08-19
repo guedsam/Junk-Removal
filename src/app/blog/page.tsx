@@ -31,6 +31,30 @@ const blogPosts = [
     date: 'December 5, 2024',
     readTime: '7 min read',
     slug: 'junk-removal-vs-dumpster-rental-comparison'
+  },
+  {
+    id: 4,
+    title: 'How to Prepare for Junk Removal Day',
+    excerpt: 'Get ready for your junk removal appointment with our comprehensive preparation guide. Learn how to sort, organize, and prepare your items for efficient pickup.',
+    date: 'December 20, 2024',
+    readTime: '8 min read',
+    slug: 'how-to-prepare-junk-removal-day'
+  },
+  {
+    id: 5,
+    title: 'Estate Cleanout Services in Oregon City & Portland',
+    excerpt: 'Compassionate, professional estate cleanout services to help families during difficult times. We handle everything with care and respect.',
+    date: 'December 18, 2024',
+    readTime: '10 min read',
+    slug: 'estate-cleanout-services-oregon-city'
+  },
+  {
+    id: 6,
+    title: 'Construction Debris Removal in Portland & Oregon City',
+    excerpt: 'Professional construction debris removal services for contractors, builders, and homeowners. Safe, efficient cleanup of all construction waste.',
+    date: 'December 12, 2024',
+    readTime: '9 min read',
+    slug: 'construction-debris-removal-portland'
   }
 ]
 
@@ -104,10 +128,10 @@ export default function BlogPage() {
               Get Free Quote
             </Link>
             <a
-              href="tel:(503)555-1234"
+              href="tel:+15037532329"
               className="bg-primary-700 text-white px-8 py-3 rounded-lg font-semibold hover:bg-primary-800 transition-colors"
             >
-              Call (503) 555-1234
+              Call (503) 753-2329
             </a>
           </div>
         </div>

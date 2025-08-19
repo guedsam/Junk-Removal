@@ -21,14 +21,14 @@ export const metadata: Metadata = {
     address: false,
     telephone: false,
   },
-  metadataBase: new URL('https://oregoncityjunkremoval.com'),
+  metadataBase: new URL('https://asjunkremoval.com'),
   alternates: {
     canonical: '/',
   },
   openGraph: {
     title: 'Andrew and Sons Junk Removal | Fast & Affordable Junk Hauling Portland',
     description: 'Professional junk removal services in Oregon City, Portland, and surrounding areas. Same-day pickup, eco-friendly disposal, and affordable rates.',
-    url: 'https://andrewandsonsjunkremoval.com',
+    url: 'https://asjunkremoval.com',
     siteName: 'Andrew and Sons Junk Removal',
     locale: 'en_US',
     type: 'website',

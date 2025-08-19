@@ -45,14 +45,14 @@ export default function Footer() {
             <div className="space-y-2">
               <p className="text-sm">
                 <span className="font-semibold">Phone:</span>{' '}
-                <a href="tel:+15035551234" className="text-primary-400 hover:text-primary-300">
-                  (503) 555-1234
+                <a href="tel:+15037532329" className="text-primary-400 hover:text-primary-300">
+                  (503) 753-2329
                 </a>
               </p>
               <p className="text-sm">
                 <span className="font-semibold">Email:</span>{' '}
-                <a href="mailto:info@oregoncityjunkremoval.com" className="text-primary-400 hover:text-primary-300">
-                  info@oregoncityjunkremoval.com
+                <a href="mailto:junk@asjunkremoval.com" className="text-primary-400 hover:text-primary-300">
+                  junk@asjunkremoval.com
                 </a>
               </p>
             </div>

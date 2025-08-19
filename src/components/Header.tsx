@@ -51,10 +51,10 @@ export default function Header() {
           {/* CTA Buttons */}
           <div className="hidden lg:flex items-center space-x-4">
             <a
-              href="tel:+15035551234"
+              href="tel:+15037532329"
               className="text-primary-600 hover:text-primary-700 font-semibold transition-colors duration-200"
             >
-              (503) 555-1234
+              (503) 753-2329
             </a>
             <Link href="/contact" className="btn-primary">
               Get Free Quote
@@ -94,10 +94,10 @@ export default function Header() {
               ))}
               <div className="px-3 py-2 space-y-2">
                 <a
-                  href="tel:+15035551234"
+                  href="tel:+15037532329"
                   className="block text-primary-600 hover:text-primary-700 font-semibold"
                 >
-                  Call: (503) 555-1234
+                  Call: (503) 753-2329
                 </a>
                 <Link
                   href="/contact"

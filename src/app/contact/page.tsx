@@ -89,8 +89,8 @@ export default function ContactPage() {
             most trusted junk removal company. Same-day service available!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:+15035551234" className="btn-primary text-lg px-8 py-4">
-              Call Now: (503) 555-1234
+            <a href="tel:+15037532329" className="btn-primary text-lg px-8 py-4">
+              Call Now: (503) 753-2329
             </a>
             <a href="#quote-form" className="btn-secondary text-lg px-8 py-4">
               Get Online Quote
@@ -123,8 +123,8 @@ export default function ContactPage() {
               <p className="text-gray-600 mb-4">
                 Speak directly with our team for immediate assistance and quotes
               </p>
-              <a href="tel:+15035551234" className="text-2xl font-bold text-primary-600 hover:text-primary-700 block mb-2">
-                (503) 555-1234
+              <a href="tel:+15037532329" className="text-2xl font-bold text-primary-600 hover:text-primary-700 block mb-2">
+                (503) 753-2329
               </a>
               <p className="text-sm text-gray-500">Available 7 days a week, 7AM - 8PM</p>
             </div>
@@ -140,8 +140,8 @@ export default function ContactPage() {
               <p className="text-gray-600 mb-4">
                 Send us details about your junk removal needs
               </p>
-              <a href="mailto:info@oregoncityjunkremoval.com" className="text-lg font-semibold text-primary-600 hover:text-primary-700 block mb-2">
-                info@oregoncityjunkremoval.com
+              <a href="mailto:junk@asjunkremoval.com" className="text-lg font-semibold text-primary-600 hover:text-primary-700 block mb-2">
+                junk@asjunkremoval.com
               </a>
               <p className="text-sm text-gray-500">We respond within 2 hours</p>
             </div>
