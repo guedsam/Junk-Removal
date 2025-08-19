@@ -1,0 +1,8 @@
+{
+  "/not-found": "app/not-found.js",
+  "/services/page": "app/services/page.js",
+  "/blog/page": "app/blog/page.js",
+  "/page": "app/page.js",
+  "/blog/eco-friendly-junk-disposal-oregon-green/page": "app/blog/eco-friendly-junk-disposal-oregon-green/page.js",
+  "/contact/page": "app/contact/page.js"
+}
