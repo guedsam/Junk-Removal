@@ -55,6 +55,30 @@ const blogPosts = [
     date: 'December 12, 2024',
     readTime: '9 min read',
     slug: 'construction-debris-removal-portland'
+  },
+  {
+    id: 7,
+    title: 'The Ultimate Spring Cleaning Junk Removal Guide for Portland Homes',
+    excerpt: 'Transform your Portland home this spring with our comprehensive junk removal guide. Learn room-by-room strategies, eco-friendly disposal tips, and cost-saving techniques.',
+    date: 'January 15, 2025',
+    readTime: '8 min read',
+    slug: 'spring-cleaning-junk-removal-guide'
+  },
+  {
+    id: 8,
+    title: 'Compassionate Hoarding Cleanup Services in Portland & Oregon City',
+    excerpt: 'Professional, discreet hoarding cleanup services that help restore homes and lives with dignity and care. Learn about our compassionate approach.',
+    date: 'January 10, 2025',
+    readTime: '12 min read',
+    slug: 'hoarding-cleanup-services-portland-oregon'
+  },
+  {
+    id: 9,
+    title: 'Office Cleanout & Commercial Junk Removal Services in Portland',
+    excerpt: 'Streamline your business operations with efficient, professional commercial junk removal services for offices, retail spaces, and warehouses.',
+    date: 'January 5, 2025',
+    readTime: '11 min read',
+    slug: 'office-cleanout-commercial-junk-removal-portland'
   }
 ]
 

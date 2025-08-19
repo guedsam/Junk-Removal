@@ -121,8 +121,8 @@ export default function HomePage() {
                 <Link href="/contact" className="btn-primary text-lg px-8 py-4">
                   Get Free Quote
                 </Link>
-                <a href="tel:+15035551234" className="btn-secondary text-lg px-8 py-4">
-                  Call Now: (503) 555-1234
+                <a href="tel:5037532329" className="btn-secondary text-lg px-8 py-4">
+                  Call Now: (503) 753-2329
                 </a>
               </div>
 
@@ -150,11 +150,13 @@ export default function HomePage() {
 
             <div className="relative">
               <div className="bg-white rounded-2xl shadow-2xl p-8">
-                <img 
-                  src="/api/placeholder/600/400" 
-                  alt="Professional junk removal team in Oregon City and Portland"
-                  className="w-full h-80 object-cover rounded-lg"
-                />
+                <div className="w-full h-80 bg-gradient-to-br from-primary-100 to-secondary-100 rounded-lg flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-6xl mb-4">🚛</div>
+                    <h3 className="text-xl font-semibold text-primary-600">Professional Junk Removal</h3>
+                    <p className="text-gray-600">Oregon City & Portland</p>
+                  </div>
+                </div>
                 <div className="absolute -top-4 -right-4 bg-primary-600 text-white px-4 py-2 rounded-lg font-semibold">
                   Same-Day Service Available!
                 </div>
@@ -285,11 +287,14 @@ export default function HomePage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {blogPosts.map((post, index) => (
               <article key={index} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
-                <img 
-                  src="/api/placeholder/400/250" 
-                  alt={post.title}
-                  className="w-full h-48 object-cover"
-                />
+                <div className="w-full h-48 bg-gradient-to-br from-primary-100 to-secondary-100 flex items-center justify-center">
+                  <div className="text-center">
+                    <div className="text-4xl mb-2">
+                      {index === 0 ? '📝' : index === 1 ? '♻️' : '🏠'}
+                    </div>
+                    <p className="text-sm text-primary-600 font-medium">Blog Post</p>
+                  </div>
+                </div>
                 <div className="p-6">
                   <p className="text-sm text-gray-500 mb-2">{post.date}</p>
                   <h3 className="text-xl font-semibold text-gray-900 mb-3">
@@ -328,8 +333,8 @@ export default function HomePage() {
             <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">
               Get Your Free Quote
             </Link>
-            <a href="tel:+15035551234" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
-              Call (503) 555-1234
+            <a href="tel:5037532329" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
+              Call (503) 753-2329
             </a>
           </div>
         </div>
