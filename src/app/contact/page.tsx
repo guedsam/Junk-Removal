@@ -1,8 +1,14 @@
 'use client'
 
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
+
+declare global {
+  interface Window {
+    grecaptcha: any;
+  }
+}
 
 const metadata: Metadata = {
   title: 'Get Free Junk Removal Quote | Contact Oregon City Junk Removal',
@@ -26,8 +32,26 @@ export default function ContactPage() {
     preferredTime: ''
   })
 
+  const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
+  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false)
+
+  // Load reCAPTCHA script
+  useEffect(() => {
+    const script = document.createElement('script')
+    script.src = 'https://www.google.com/recaptcha/api.js?render=6LdS3KsrAAAAAKuEG_DKKKL5u0lqVgvPsmTrjVZa'
+    script.async = true
+    script.defer = true
+    script.onload = () => {
+      setRecaptchaLoaded(true)
+    }
+    document.head.appendChild(script)
+
+    return () => {
+      document.head.removeChild(script)
+    }
+  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -37,25 +61,71 @@ export default function ContactPage() {
     }))
   }
 
+  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
+    const files = e.target.files
+    if (files) {
+      const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'))
+      if (imageFiles.length !== files.length) {
+        alert('Please upload only image files (JPG, PNG, GIF, etc.)')
+        e.target.value = ''
+        return
+      }
+      setUploadedFiles(prev => [...prev, ...imageFiles])
+    }
+  }
+
+  const removeFile = (index: number) => {
+    setUploadedFiles(prev => prev.filter((_, i) => i !== index))
+  }
+
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
     setIsSubmitting(true)
     
-    // Simulate form submission
-    setTimeout(() => {
+    try {
+      // Execute reCAPTCHA
+      if (recaptchaLoaded && window.grecaptcha) {
+        const token = await window.grecaptcha.execute('6LdS3KsrAAAAAKuEG_DKKKL5u0lqVgvPsmTrjVZa', { action: 'submit' })
+        
+        // Create FormData for file upload
+        const formDataToSend = new FormData()
+        Object.entries(formData).forEach(([key, value]) => {
+          formDataToSend.append(key, value)
+        })
+        
+        // Add files
+        uploadedFiles.forEach((file, index) => {
+          formDataToSend.append(`image_${index}`, file)
+        })
+        
+        // Add reCAPTCHA token
+        formDataToSend.append('recaptcha_token', token)
+        
+        // Here you would normally send to your backend
+        // For now, simulate the submission
+        setTimeout(() => {
+          setIsSubmitting(false)
+          setSubmitMessage('Thank you! We\'ll contact you within 2 hours with your free quote.')
+          setFormData({
+            name: '',
+            phone: '',
+            email: '',
+            zipCode: '',
+            serviceType: '',
+            description: '',
+            preferredDate: '',
+            preferredTime: ''
+          })
+          setUploadedFiles([])
+        }, 1000)
+      } else {
+        throw new Error('reCAPTCHA not loaded')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
       setIsSubmitting(false)
-      setSubmitMessage('Thank you! We\'ll contact you within 2 hours with your free quote.')
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        zipCode: '',
-        serviceType: '',
-        description: '',
-        preferredDate: '',
-        preferredTime: ''
-      })
-    }, 1000)
+      setSubmitMessage('There was an error submitting your form. Please try again or call us directly.')
+    }
   }
 
   const serviceTypes = [
@@ -325,6 +395,54 @@ export default function ContactPage() {
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                     placeholder="Please describe what items you need removed, approximate quantity, and any special considerations (stairs, tight spaces, etc.)"
                   />
+                </div>
+
+                {/* File Upload */}
+                <div>
+                  <label htmlFor="images" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Upload Images (Optional)
+                  </label>
+                  <p className="text-sm text-gray-500 mb-3">
+                    Upload photos of the items you need removed to help us provide a more accurate quote. Images only (JPG, PNG, GIF).
+                  </p>
+                  <input
+                    type="file"
+                    id="images"
+                    name="images"
+                    multiple
+                    accept="image/*"
+                    onChange={handleFileUpload}
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100"
+                  />
+                  
+                  {/* Display uploaded files */}
+                  {uploadedFiles.length > 0 && (
+                    <div className="mt-4">
+                      <p className="text-sm font-semibold text-gray-700 mb-2">Uploaded Images:</p>
+                      <div className="space-y-2">
+                        {uploadedFiles.map((file, index) => (
+                          <div key={index} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
+                            <div className="flex items-center space-x-3">
+                              <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                              <span className="text-sm text-gray-700">{file.name}</span>
+                              <span className="text-xs text-gray-500">({(file.size / 1024 / 1024).toFixed(2)} MB)</span>
+                            </div>
+                            <button
+                              type="button"
+                              onClick={() => removeFile(index)}
+                              className="text-red-600 hover:text-red-700 p-1"
+                            >
+                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
+                              </svg>
+                            </button>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  )}
                 </div>
 
                 {/* Submit Button */}
