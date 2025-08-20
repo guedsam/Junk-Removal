@@ -54,8 +54,8 @@ export default function BlogPost() {
             {/* Featured Image */}
             <div className="mb-12">
               <img 
-                src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80" 
-                alt="Organized items ready for junk removal pickup"
+                src="/images/junk-removal/junk-removal-preparation-tips.webp" 
+                alt="Organized items ready for junk removal pickup in Portland Oregon"
                 className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
               />
             </div>

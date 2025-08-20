@@ -26,7 +26,11 @@ export default function BlogPost() {
             <span className="mx-2">•</span>
             <span>5 min read</span>
           </div>
-          <div className="h-64 bg-gradient-to-br from-primary-500 to-primary-600 rounded-lg mb-8"></div>
+          <img 
+            src="/images/junk-removal/oregon-city-junk-hauling.webp" 
+            alt="Professional junk removal team in Portland Oregon loading items into truck"
+            className="w-full h-64 object-cover rounded-lg mb-8"
+          />
         </header>
 
         {/* Content */}

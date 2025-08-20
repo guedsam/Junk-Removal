@@ -26,7 +26,11 @@ export default function BlogPost() {
             <span className="mx-2">•</span>
             <span>7 min read</span>
           </div>
-          <div className="h-64 bg-gradient-to-br from-secondary-500 to-primary-600 rounded-lg mb-8"></div>
+          <img 
+            src="/images/junk-removal/furniture-removal-oregon.webp" 
+            alt="Junk removal vs dumpster rental comparison for Oregon City and Portland projects"
+            className="w-full h-64 object-cover rounded-lg mb-8"
+          />
         </header>
 
         {/* Content */}

@@ -54,8 +54,8 @@ export default function BlogPost() {
             {/* Featured Image */}
             <div className="mb-12">
               <img 
-                src="https://images.unsplash.com/photo-1504307651254-35680f356dfd?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80" 
-                alt="Construction debris removal service in action"
+                src="/images/junk-removal/construction-debris-removal-portland.webp" 
+                alt="Professional construction debris removal service in Portland Oregon"
                 className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
               />
             </div>

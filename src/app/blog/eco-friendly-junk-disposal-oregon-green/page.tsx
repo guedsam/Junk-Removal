@@ -26,7 +26,11 @@ export default function BlogPost() {
             <span className="mx-2">•</span>
             <span>6 min read</span>
           </div>
-          <div className="h-64 bg-gradient-to-br from-green-500 to-primary-600 rounded-lg mb-8"></div>
+          <img 
+            src="/images/junk-removal/eco-friendly-disposal-portland.webp" 
+            alt="Eco-friendly junk disposal and recycling in Portland Oregon"
+            className="w-full h-64 object-cover rounded-lg mb-8"
+          />
         </header>
 
         {/* Content */}

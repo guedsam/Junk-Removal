@@ -54,8 +54,8 @@ export default function BlogPost() {
             {/* Featured Image */}
             <div className="mb-12">
               <img 
-                src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&h=600&q=80" 
-                alt="Professional estate cleanout service in progress"
+                src="/images/junk-removal/estate-cleanout-oregon-city.webp" 
+                alt="Professional estate cleanout service in Oregon City and Portland"
                 className="w-full h-64 md:h-96 object-cover rounded-xl shadow-lg"
               />
             </div>

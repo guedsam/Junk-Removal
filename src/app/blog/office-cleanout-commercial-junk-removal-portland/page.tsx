@@ -57,6 +57,15 @@ export default function OfficeCleanoutCommercialJunkRemovalPage() {
         </div>
       </section>
 
+      {/* Featured Image */}
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        <img 
+          src="/images/junk-removal/office-cleanout-commercial-portland.webp" 
+          alt="Professional office cleanout and commercial junk removal services in Portland Oregon"
+          className="w-full h-64 md:h-80 object-cover rounded-xl shadow-lg"
+        />
+      </div>
+
       {/* Main Content */}
       <article className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="prose prose-lg max-w-none">
