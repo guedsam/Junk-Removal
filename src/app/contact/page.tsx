@@ -85,49 +85,56 @@ export default function ContactPage() {
     setUploadedFiles(prev => prev.filter((_, i) => i !== index))
   }
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault()
-    
-    // Create email body with all form data
-    const services = formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified'
-    const zipCode = formData.zipCode || 'Not provided'
-    const description = formData.description || 'No description provided'
-    
-    const emailBody = `
-New Junk Removal Quote Request
+    setIsSubmitting(true)
+    setSubmitMessage('')
 
-Customer Information:
-- Name: ${formData.name}
-- Phone: ${formData.phone}
-- Email: ${formData.email}
-- Zip Code: ${zipCode}
+    try {
+      // Create FormData for Netlify Forms submission
+      const formDataToSubmit = new FormData()
+      
+      // Add form fields
+      formDataToSubmit.append('form-name', 'junk-removal-quote')
+      formDataToSubmit.append('name', formData.name)
+      formDataToSubmit.append('phone', formData.phone)
+      formDataToSubmit.append('email', formData.email)
+      formDataToSubmit.append('zipCode', formData.zipCode || 'Not provided')
+      formDataToSubmit.append('serviceTypes', formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified')
+      formDataToSubmit.append('description', formData.description || 'No description provided')
+      
+      // Add uploaded files
+      uploadedFiles.forEach((file, index) => {
+        formDataToSubmit.append(`image-${index}`, file)
+      })
 
-Services Requested:
-${services}
+      // Submit to Netlify
+      const response = await fetch('/', {
+        method: 'POST',
+        body: formDataToSubmit
+      })
 
-Description:
-${description}
-
-Submitted: ${new Date().toLocaleString()}
-    `.trim()
-
-    const subject = `New Junk Removal Quote Request from ${formData.name}`
-    const mailtoLink = `mailto:sam@asjunkremoval.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`
-    
-    // Open email client
-    window.location.href = mailtoLink
-    
-    // Show success message and reset form
-    setSubmitMessage('Your email client should open with the quote request. Please send the email to complete your request.')
-    setFormData({
-      name: '',
-      phone: '',
-      email: '',
-      zipCode: '',
-      serviceTypes: [],
-      description: ''
-    })
-    setUploadedFiles([])
+      if (response.ok) {
+        setSubmitMessage('Thank you! Your quote request has been submitted successfully. We\'ll contact you within 2 hours with your free quote.')
+        // Reset form
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          zipCode: '',
+          serviceTypes: [],
+          description: ''
+        })
+        setUploadedFiles([])
+      } else {
+        throw new Error('Form submission failed')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      setSubmitMessage('Sorry, there was an error submitting your request. Please try calling us at (503) 753-2329 or email us directly at sam@asjunkremoval.com.')
+    } finally {
+      setIsSubmitting(false)
+    }
   }
 
   const serviceTypes = [
@@ -140,7 +147,6 @@ Submitted: ${new Date().toLocaleString()}
     'Estate Cleanout',
     'Other'
   ]
-
 
   return (
     <div className="min-h-screen">
@@ -206,8 +212,8 @@ Submitted: ${new Date().toLocaleString()}
               <p className="text-gray-600 mb-4">
                 Send us details about your junk removal needs
               </p>
-              <a href="mailto:junk@asjunkremoval.com" className="text-lg font-semibold text-primary-600 hover:text-primary-700 block mb-2">
-                junk@asjunkremoval.com
+              <a href="mailto:sam@asjunkremoval.com" className="text-lg font-semibold text-primary-600 hover:text-primary-700 block mb-2">
+                sam@asjunkremoval.com
               </a>
               <p className="text-sm text-gray-500">We respond within 2 hours</p>
             </div>
@@ -252,7 +258,24 @@ Submitted: ${new Date().toLocaleString()}
                 </div>
               )}
 
-              <form onSubmit={handleSubmit} className="space-y-6">
+              <form 
+                name="junk-removal-quote" 
+                method="POST" 
+                data-netlify="true" 
+                data-netlify-honeypot="bot-field"
+                onSubmit={handleSubmit} 
+                className="space-y-6"
+              >
+                {/* Hidden field for Netlify Forms */}
+                <input type="hidden" name="form-name" value="junk-removal-quote" />
+                
+                {/* Honeypot field for spam protection */}
+                <div style={{ display: 'none' }}>
+                  <label>
+                    Don't fill this out if you're human: <input name="bot-field" />
+                  </label>
+                </div>
+
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
