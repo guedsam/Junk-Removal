@@ -113,7 +113,7 @@ export default function ContactPage() {
         formDataToSend.append('recaptcha_token', token)
         
         // Send to Formspree endpoint for sam@asjunkremoval.com
-        const response = await fetch('https://formspree.io/f/xdkogpvw', {
+        const response = await fetch('https://formspree.io/sam@asjunkremoval.com', {
           method: 'POST',
           body: formDataToSend,
           headers: {
