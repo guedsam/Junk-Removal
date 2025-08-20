@@ -39,7 +39,7 @@ const blogPosts = [
     date: 'December 20, 2024',
     readTime: '8 min read',
     slug: 'how-to-prepare-junk-removal-day',
-    image: 'junk-removal-preparation-portland.webp'
+    image: 'junk-removal-preparation-tips.webp'
   },
   {
     id: 5,
@@ -57,7 +57,7 @@ const blogPosts = [
     date: 'December 12, 2024',
     readTime: '9 min read',
     slug: 'construction-debris-removal-portland',
-    image: 'construction-debris-portland.webp'
+    image: 'construction-debris-removal-portland.webp'
   },
   {
     id: 7,
@@ -66,7 +66,7 @@ const blogPosts = [
     date: 'January 15, 2025',
     readTime: '8 min read',
     slug: 'spring-cleaning-junk-removal-guide',
-    image: 'spring-cleaning-portland.webp'
+    image: 'spring-cleaning-junk-removal.webp'
   },
   {
     id: 8,
@@ -84,7 +84,7 @@ const blogPosts = [
     date: 'January 5, 2025',
     readTime: '11 min read',
     slug: 'office-cleanout-commercial-junk-removal-portland',
-    image: 'commercial-junk-removal-portland.webp'
+    image: 'office-cleanout-commercial-portland.webp'
   },
   {
     id: 10,
