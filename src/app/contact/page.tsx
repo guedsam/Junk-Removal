@@ -68,50 +68,27 @@ export default function ContactPage() {
     setSubmitMessage('')
 
     try {
-      // Create the email content
-      const emailData = {
-        to: 'sam@asjunkremoval.com',
-        subject: `New Junk Removal Quote Request from ${formData.name}`,
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        zipCode: formData.zipCode || 'Not provided',
-        services: formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified',
-        description: formData.description || 'No description provided'
-      }
-
-      // Send to Web3Forms (free email service)
-      const response = await fetch('https://api.web3forms.com/submit', {
+      // Use Formspree for reliable email delivery
+      const response = await fetch('https://formspree.io/f/xpzgkqko', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
         },
         body: JSON.stringify({
-          access_key: 'c8f5f4e2-8b3a-4d1e-9f2a-7c6b5a4d3e2f', // Free public key for testing
           name: formData.name,
           email: formData.email,
           phone: formData.phone,
+          zipCode: formData.zipCode || 'Not provided',
+          services: formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified',
+          message: formData.description || 'No description provided',
           subject: `New Junk Removal Quote Request from ${formData.name}`,
-          message: `
-New Junk Removal Quote Request
-
-Customer Information:
-- Name: ${formData.name}
-- Phone: ${formData.phone}
-- Email: ${formData.email}
-- Zip Code: ${formData.zipCode || 'Not provided'}
-
-Services Requested:
-${formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified'}
-
-Description:
-${formData.description || 'No description provided'}
-
-Submitted: ${new Date().toLocaleString()}
-          `,
-          to: 'sam@asjunkremoval.com'
+          _replyto: formData.email,
+          _subject: `New Junk Removal Quote Request from ${formData.name}`,
+          _to: 'sam@asjunkremoval.com'
         })
       })
+
+      const result = await response.json()
 
       if (response.ok) {
         setSubmitMessage('Thank you! Your quote request has been submitted successfully. We\'ll contact you within 2 hours with your free quote.')
