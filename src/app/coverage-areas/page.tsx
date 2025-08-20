@@ -3,11 +3,11 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Junk Removal Coverage Areas | Oregon City, Portland & Surrounding Areas',
-  description: 'Oregon City Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas. Local junk removal near you.',
+  description: 'Andrew and Sons Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas. Local junk removal near you.',
   keywords: 'junk removal Oregon City, junk hauling Portland, junk removal Clackamas, junk removal Gresham, junk removal Milwaukie, local junk removal near me',
   openGraph: {
     title: 'Junk Removal Coverage Areas | Oregon City, Portland & Surrounding Areas',
-    description: 'Oregon City Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas.',
+    description: 'Andrew and Sons Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas.',
   },
 }
 
@@ -278,7 +278,7 @@ export default function CoverageAreasPage() {
             <div className="aspect-w-16 aspect-h-9 mb-6">
               <img 
                 src="/images/junk-removal/portland-metro-service-area-map.webp" 
-                alt="Oregon City Junk Removal service area map showing Portland metro coverage"
+                alt="Andrew and Sons Junk Removal service area map showing Portland metro coverage"
                 className="w-full h-96 object-cover rounded-lg"
               />
             </div>
@@ -431,7 +431,7 @@ export default function CoverageAreasPage() {
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             No matter where you are in our service area, we're ready to help. 
-            Get your free quote today and experience the Oregon City Junk Removal difference.
+            Get your free quote today and experience the Andrew and Sons Junk Removal difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">

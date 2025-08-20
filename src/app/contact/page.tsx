@@ -2,12 +2,12 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 const metadata: Metadata = {
-  title: 'Get Free Junk Removal Quote | Contact Oregon City Junk Removal',
-  description: 'Get your free junk removal quote today! Contact Oregon City Junk Removal for fast, affordable service in Portland and surrounding areas. Same-day pickup available.',
+  title: 'Get Free Junk Removal Quote | Contact Andrew and Sons Junk Removal',
+  description: 'Get your free junk removal quote today! Contact Andrew and Sons Junk Removal for fast, affordable service in Portland and surrounding areas. Same-day pickup available.',
   keywords: 'free junk removal quote Oregon City, contact junk removal Portland, junk removal estimate, same-day junk pickup Oregon',
   openGraph: {
-    title: 'Get Free Junk Removal Quote | Contact Oregon City Junk Removal',
-    description: 'Get your free junk removal quote today! Contact Oregon City Junk Removal for fast, affordable service in Portland and surrounding areas.',
+    title: 'Get Free Junk Removal Quote | Contact Andrew and Sons Junk Removal',
+    description: 'Get your free junk removal quote today! Contact Andrew and Sons Junk Removal for fast, affordable service in Portland and surrounding areas.',
   },
 }
 
@@ -299,7 +299,7 @@ export default function ContactPage() {
         <div className="container-max">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Choose Oregon City Junk Removal?
+              Why Choose Andrew and Sons Junk Removal?
             </h2>
             <p className="text-xl text-gray-600">
               Professional service you can trust with benefits that matter

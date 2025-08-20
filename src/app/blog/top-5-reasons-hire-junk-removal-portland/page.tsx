@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Top 5 Reasons to Hire a Junk Removal Company in Portland | Oregon City Junk Removal',
+  title: 'Top 5 Reasons to Hire a Junk Removal Company in Portland | Andrew and Sons Junk Removal',
   description: 'Discover why professional junk removal services in Portland save you time, money, and hassle. Learn the benefits of hiring experts for your junk hauling needs.',
   keywords: 'junk removal Portland, professional junk hauling, Portland junk removal company, Oregon City junk removal, junk removal benefits',
 }

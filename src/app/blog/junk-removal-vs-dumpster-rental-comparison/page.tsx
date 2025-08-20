@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Junk Removal vs Dumpster Rental: Which is Right for You? | Oregon City Junk Removal',
+  title: 'Junk Removal vs Dumpster Rental: Which is Right for You? | Andrew and Sons Junk Removal',
   description: 'Compare junk removal services with dumpster rentals to determine the best solution for your Oregon City or Portland project. Expert guidance for your cleanup needs.',
   keywords: 'junk removal vs dumpster rental, Oregon City dumpster rental, Portland junk removal comparison, waste disposal options, cleanup services',
 }

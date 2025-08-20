@@ -2,12 +2,12 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'About Oregon City Junk Removal | Local, Eco-Friendly Junk Hauling',
-  description: 'Learn about Oregon City Junk Removal - your local, eco-friendly junk hauling company serving Portland and surrounding areas. Family-owned business committed to responsible disposal.',
+  title: 'About Andrew and Sons Junk Removal | Local, Eco-Friendly Junk Hauling',
+  description: 'Learn about Andrew and Sons Junk Removal - your local, eco-friendly junk hauling company serving Portland and surrounding areas. Family-owned business committed to responsible disposal.',
   keywords: 'about junk removal Oregon City, local junk hauling Portland, eco-friendly junk disposal Oregon, family owned junk removal',
   openGraph: {
-    title: 'About Oregon City Junk Removal | Local, Eco-Friendly Junk Hauling',
-    description: 'Learn about Oregon City Junk Removal - your local, eco-friendly junk hauling company serving Portland and surrounding areas.',
+    title: 'About Andrew and Sons Junk Removal | Local, Eco-Friendly Junk Hauling',
+    description: 'Learn about Andrew and Sons Junk Removal - your local, eco-friendly junk hauling company serving Portland and surrounding areas.',
   },
 }
 
@@ -67,7 +67,7 @@ export default function AboutPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                About Oregon City{' '}
+                About Andrew and Sons{' '}
                 <span className="text-gradient">Junk Removal</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
@@ -86,7 +86,7 @@ export default function AboutPage() {
             <div className="relative">
               <img 
                 src="/images/junk-removal/oregon-city-junk-removal-team.webp" 
-                alt="Oregon City Junk Removal team with truck"
+                alt="Andrew and Sons Junk Removal team with truck"
                 className="w-full h-80 object-cover rounded-2xl shadow-2xl"
               />
             </div>
@@ -101,7 +101,7 @@ export default function AboutPage() {
             <div>
               <img 
                 src="/images/junk-removal/founders-oregon-city-junk-removal.webp" 
-                alt="Founders of Oregon City Junk Removal"
+                alt="Founders of Andrew and Sons Junk Removal"
                 className="w-full h-96 object-cover rounded-xl shadow-lg"
               />
             </div>
@@ -111,7 +111,7 @@ export default function AboutPage() {
               </h2>
               <div className="space-y-4 text-gray-600">
                 <p>
-                  Oregon City Junk Removal was founded in 2018 by local residents who saw a need 
+                  Andrew and Sons Junk Removal was founded in 2018 by local residents who saw a need 
                   for reliable, eco-friendly junk removal services in the Portland metro area. 
                   What started as a small family business has grown into the region's most trusted 
                   junk hauling company.
@@ -277,7 +277,7 @@ export default function AboutPage() {
             Ready to Experience the Difference?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust Oregon City Junk Removal 
+            Join thousands of satisfied customers who trust Andrew and Sons Junk Removal 
             for their junk hauling needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">

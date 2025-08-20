@@ -2,7 +2,7 @@ import { Metadata } from 'next'
 import Link from 'next/link'
 
 export const metadata: Metadata = {
-  title: 'Eco-Friendly Junk Disposal: How We Keep Oregon Green | Oregon City Junk Removal',
+  title: 'Eco-Friendly Junk Disposal: How We Keep Oregon Green | Andrew and Sons Junk Removal',
   description: 'Learn about sustainable junk removal practices and eco-friendly disposal methods that protect Oregon\'s environment. Responsible junk hauling in Portland and Oregon City.',
   keywords: 'eco-friendly junk disposal, sustainable junk removal Oregon, green junk hauling Portland, environmental junk removal, Oregon recycling',
 }
@@ -36,7 +36,7 @@ export default function BlogPost() {
         {/* Content */}
         <div className="prose prose-lg max-w-none">
           <p className="text-xl text-gray-600 mb-8">
-            Oregon has always been a leader in environmental conservation, and at Oregon City Junk Removal, we're proud to continue that tradition. Our eco-friendly junk disposal practices ensure that your unwanted items are handled responsibly, keeping Oregon's beautiful landscapes clean and green for future generations.
+            Oregon has always been a leader in environmental conservation, and at Andrew and Sons Junk Removal, we're proud to continue that tradition. Our eco-friendly junk disposal practices ensure that your unwanted items are handled responsibly, keeping Oregon's beautiful landscapes clean and green for future generations.
           </p>
 
           <h2 className="text-2xl font-bold text-gray-900 mt-12 mb-6">Our Environmental Commitment</h2>
@@ -152,7 +152,7 @@ export default function BlogPost() {
             <strong>Oregon's environmental consciousness makes our job easier and more rewarding.</strong> Our customers appreciate our eco-friendly approach, and many specifically choose us because of our commitment to environmental responsibility.
           </p>
           <p className="text-gray-700 mb-8">
-            When you choose Oregon City Junk Removal, you're not just clearing out your space – you're contributing to a cleaner, greener Oregon. Together, we can ensure that our beautiful state remains pristine for generations to come.
+            When you choose Andrew and Sons Junk Removal, you're not just clearing out your space – you're contributing to a cleaner, greener Oregon. Together, we can ensure that our beautiful state remains pristine for generations to come.
           </p>
         </div>
 
