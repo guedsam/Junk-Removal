@@ -22,16 +22,12 @@ export default function Header() {
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="flex items-center">
-            <Link href="/" className="flex items-center space-x-3">
+            <Link href="/">
               <img 
                 src="/images/junk-removal/logo.png" 
                 alt="Andrew and Sons Junk Removal Logo"
                 className="h-12 w-auto"
               />
-              <div>
-                <h1 className="text-xl font-bold text-gray-900">Andrew and Sons</h1>
-                <p className="text-sm text-primary-600 font-semibold">Junk Removal</p>
-              </div>
             </Link>
           </div>
 
