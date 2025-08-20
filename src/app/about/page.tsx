@@ -269,63 +269,6 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Team Section */}
-      <section className="section-padding bg-gray-50">
-        <div className="container-max">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Meet Our Team
-            </h2>
-            <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Our experienced, professional team is dedicated to providing exceptional service
-            </p>
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-              <img 
-                src="/images/junk-removal/mike-thompson-cofounder.webp" 
-                alt="Mike Thompson, Co-Founder"
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Mike Thompson</h3>
-              <p className="text-primary-600 font-medium mb-3">Co-Founder & Operations Manager</p>
-              <p className="text-gray-600 text-sm">
-                15+ years in waste management and environmental services. Passionate about 
-                sustainable business practices.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-              <img 
-                src="/images/junk-removal/sarah-thompson-cofounder.webp" 
-                alt="Sarah Thompson, Co-Founder"
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Sarah Thompson</h3>
-              <p className="text-primary-600 font-medium mb-3">Co-Founder & Customer Relations</p>
-              <p className="text-gray-600 text-sm">
-                Background in customer service and community outreach. Ensures every customer 
-                has an exceptional experience.
-              </p>
-            </div>
-
-            <div className="bg-white rounded-xl p-6 shadow-sm text-center">
-              <img 
-                src="/images/junk-removal/professional-junk-removal-crew.webp" 
-                alt="Team of junk removal professionals"
-                className="w-24 h-24 rounded-full mx-auto mb-4 object-cover"
-              />
-              <h3 className="text-xl font-semibold text-gray-900 mb-2">Our Crew</h3>
-              <p className="text-primary-600 font-medium mb-3">Professional Removal Team</p>
-              <p className="text-gray-600 text-sm">
-                Trained, insured, and background-checked professionals committed to safe, 
-                efficient junk removal.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
 
       {/* CTA Section */}
       <section className="section-padding bg-primary-600">
