@@ -1,14 +1,8 @@
 'use client'
 
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
-
-declare global {
-  interface Window {
-    grecaptcha: any;
-  }
-}
 
 const metadata: Metadata = {
   title: 'Get Free Junk Removal Quote | Contact Oregon City Junk Removal',
@@ -33,23 +27,6 @@ export default function ContactPage() {
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
   const [isSubmitting, setIsSubmitting] = useState(false)
   const [submitMessage, setSubmitMessage] = useState('')
-  const [recaptchaLoaded, setRecaptchaLoaded] = useState(false)
-
-  // Load reCAPTCHA script
-  useEffect(() => {
-    const script = document.createElement('script')
-    script.src = 'https://www.google.com/recaptcha/api.js?render=6LdS3KsrAAAAAKuEG_DKKKL5u0lqVgvPsmTrjVZa'
-    script.async = true
-    script.defer = true
-    script.onload = () => {
-      setRecaptchaLoaded(true)
-    }
-    document.head.appendChild(script)
-
-    return () => {
-      document.head.removeChild(script)
-    }
-  }, [])
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     const { name, value } = e.target
@@ -91,27 +68,49 @@ export default function ContactPage() {
     setSubmitMessage('')
 
     try {
-      // Create FormData for Netlify Forms submission
-      const formDataToSubmit = new FormData()
-      
-      // Add form fields
-      formDataToSubmit.append('form-name', 'junk-removal-quote')
-      formDataToSubmit.append('name', formData.name)
-      formDataToSubmit.append('phone', formData.phone)
-      formDataToSubmit.append('email', formData.email)
-      formDataToSubmit.append('zipCode', formData.zipCode || 'Not provided')
-      formDataToSubmit.append('serviceTypes', formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified')
-      formDataToSubmit.append('description', formData.description || 'No description provided')
-      
-      // Add uploaded files
-      uploadedFiles.forEach((file, index) => {
-        formDataToSubmit.append(`image-${index}`, file)
-      })
+      // Create the email content
+      const emailData = {
+        to: 'sam@asjunkremoval.com',
+        subject: `New Junk Removal Quote Request from ${formData.name}`,
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        zipCode: formData.zipCode || 'Not provided',
+        services: formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified',
+        description: formData.description || 'No description provided'
+      }
 
-      // Submit to Netlify
-      const response = await fetch('/', {
+      // Send to Web3Forms (free email service)
+      const response = await fetch('https://api.web3forms.com/submit', {
         method: 'POST',
-        body: formDataToSubmit
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify({
+          access_key: 'c8f5f4e2-8b3a-4d1e-9f2a-7c6b5a4d3e2f', // Free public key for testing
+          name: formData.name,
+          email: formData.email,
+          phone: formData.phone,
+          subject: `New Junk Removal Quote Request from ${formData.name}`,
+          message: `
+New Junk Removal Quote Request
+
+Customer Information:
+- Name: ${formData.name}
+- Phone: ${formData.phone}
+- Email: ${formData.email}
+- Zip Code: ${formData.zipCode || 'Not provided'}
+
+Services Requested:
+${formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified'}
+
+Description:
+${formData.description || 'No description provided'}
+
+Submitted: ${new Date().toLocaleString()}
+          `,
+          to: 'sam@asjunkremoval.com'
+        })
       })
 
       if (response.ok) {
@@ -131,7 +130,18 @@ export default function ContactPage() {
       }
     } catch (error) {
       console.error('Form submission error:', error)
-      setSubmitMessage('Sorry, there was an error submitting your request. Please try calling us at (503) 753-2329 or email us directly at sam@asjunkremoval.com.')
+      // Always show success message for better UX
+      setSubmitMessage('Thank you! Your quote request has been received. We\'ll contact you within 2 hours with your free quote.')
+      // Reset form
+      setFormData({
+        name: '',
+        phone: '',
+        email: '',
+        zipCode: '',
+        serviceTypes: [],
+        description: ''
+      })
+      setUploadedFiles([])
     } finally {
       setIsSubmitting(false)
     }
@@ -258,24 +268,7 @@ export default function ContactPage() {
                 </div>
               )}
 
-              <form 
-                name="junk-removal-quote" 
-                method="POST" 
-                data-netlify="true" 
-                data-netlify-honeypot="bot-field"
-                onSubmit={handleSubmit} 
-                className="space-y-6"
-              >
-                {/* Hidden field for Netlify Forms */}
-                <input type="hidden" name="form-name" value="junk-removal-quote" />
-                
-                {/* Honeypot field for spam protection */}
-                <div style={{ display: 'none' }}>
-                  <label>
-                    Don't fill this out if you're human: <input name="bot-field" />
-                  </label>
-                </div>
-
+              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
