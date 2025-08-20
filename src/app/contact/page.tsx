@@ -27,9 +27,7 @@ export default function ContactPage() {
     email: '',
     zipCode: '',
     serviceType: '',
-    description: '',
-    preferredDate: '',
-    preferredTime: ''
+    description: ''
   })
 
   const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
@@ -112,9 +110,7 @@ export default function ContactPage() {
             email: '',
             zipCode: '',
             serviceType: '',
-            description: '',
-            preferredDate: '',
-            preferredTime: ''
+            description: ''
           })
           setUploadedFiles([])
         }, 1000)
@@ -139,12 +135,6 @@ export default function ContactPage() {
     'Other'
   ]
 
-  const timeSlots = [
-    'Morning (8AM - 12PM)',
-    'Afternoon (12PM - 5PM)',
-    'Evening (5PM - 8PM)',
-    'Anytime'
-  ]
 
   return (
     <div className="min-h-screen">
@@ -327,58 +317,23 @@ export default function ContactPage() {
                   </div>
 
                   {/* Service Type */}
-                  <div>
+                  <div className="md:col-span-2">
                     <label htmlFor="serviceType" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Service Needed *
+                      Service Needed
                     </label>
                     <select
                       id="serviceType"
                       name="serviceType"
                       value={formData.serviceType}
                       onChange={handleInputChange}
-                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                     >
-                      <option value="">Select a service</option>
+                      <option value="">Select a service (optional)</option>
                       {serviceTypes.map((service, index) => (
                         <option key={index} value={service}>{service}</option>
                       ))}
                     </select>
                   </div>
-
-                  {/* Preferred Date */}
-                  <div>
-                    <label htmlFor="preferredDate" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Preferred Date
-                    </label>
-                    <input
-                      type="date"
-                      id="preferredDate"
-                      name="preferredDate"
-                      value={formData.preferredDate}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                    />
-                  </div>
-                </div>
-
-                {/* Preferred Time */}
-                <div>
-                  <label htmlFor="preferredTime" className="block text-sm font-semibold text-gray-700 mb-2">
-                    Preferred Time
-                  </label>
-                  <select
-                    id="preferredTime"
-                    name="preferredTime"
-                    value={formData.preferredTime}
-                    onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  >
-                    <option value="">Select preferred time</option>
-                    {timeSlots.map((time, index) => (
-                      <option key={index} value={time}>{time}</option>
-                    ))}
-                  </select>
                 </div>
 
                 {/* Description */}
