@@ -26,7 +26,7 @@ export default function ContactPage() {
     phone: '',
     email: '',
     zipCode: '',
-    serviceType: '',
+    serviceTypes: [] as string[],
     description: ''
   })
 
@@ -59,6 +59,15 @@ export default function ContactPage() {
     }))
   }
 
+  const handleServiceTypeChange = (service: string) => {
+    setFormData(prev => ({
+      ...prev,
+      serviceTypes: prev.serviceTypes.includes(service)
+        ? prev.serviceTypes.filter(s => s !== service)
+        : [...prev.serviceTypes, service]
+    }))
+  }
+
   const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
     const files = e.target.files
     if (files) {
@@ -88,7 +97,11 @@ export default function ContactPage() {
         // Create FormData for file upload
         const formDataToSend = new FormData()
         Object.entries(formData).forEach(([key, value]) => {
-          formDataToSend.append(key, value)
+          if (key === 'serviceTypes') {
+            formDataToSend.append(key, JSON.stringify(value))
+          } else {
+            formDataToSend.append(key, value as string)
+          }
         })
         
         // Add files
@@ -99,9 +112,16 @@ export default function ContactPage() {
         // Add reCAPTCHA token
         formDataToSend.append('recaptcha_token', token)
         
-        // Here you would normally send to your backend
-        // For now, simulate the submission
-        setTimeout(() => {
+        // Send to Formspree endpoint for sam@asjunkremoval.com
+        const response = await fetch('https://formspree.io/f/xdkogpvw', {
+          method: 'POST',
+          body: formDataToSend,
+          headers: {
+            'Accept': 'application/json'
+          }
+        })
+
+        if (response.ok) {
           setIsSubmitting(false)
           setSubmitMessage('Thank you! We\'ll contact you within 2 hours with your free quote.')
           setFormData({
@@ -109,11 +129,13 @@ export default function ContactPage() {
             phone: '',
             email: '',
             zipCode: '',
-            serviceType: '',
+            serviceTypes: [],
             description: ''
           })
           setUploadedFiles([])
-        }, 1000)
+        } else {
+          throw new Error('Form submission failed')
+        }
       } else {
         throw new Error('reCAPTCHA not loaded')
       }
@@ -302,7 +324,7 @@ export default function ContactPage() {
                   {/* Zip Code */}
                   <div>
                     <label htmlFor="zipCode" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Zip Code *
+                      Zip Code
                     </label>
                     <input
                       type="text"
@@ -310,29 +332,32 @@ export default function ContactPage() {
                       name="zipCode"
                       value={formData.zipCode}
                       onChange={handleInputChange}
-                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                      placeholder="97045"
+                      placeholder="97045 (optional)"
                     />
                   </div>
+                </div>
 
-                  {/* Service Type */}
-                  <div className="md:col-span-2">
-                    <label htmlFor="serviceType" className="block text-sm font-semibold text-gray-700 mb-2">
-                      Service Needed
-                    </label>
-                    <select
-                      id="serviceType"
-                      name="serviceType"
-                      value={formData.serviceType}
-                      onChange={handleInputChange}
-                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                    >
-                      <option value="">Select a service (optional)</option>
-                      {serviceTypes.map((service, index) => (
-                        <option key={index} value={service}>{service}</option>
-                      ))}
-                    </select>
+                {/* Services Multi-Select */}
+                <div>
+                  <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    Services Needed (Select all that apply)
+                  </label>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
+                    {serviceTypes.map((service, index) => (
+                      <div key={index} className="flex items-center">
+                        <input
+                          type="checkbox"
+                          id={`service-${index}`}
+                          checked={formData.serviceTypes.includes(service)}
+                          onChange={() => handleServiceTypeChange(service)}
+                          className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                        />
+                        <label htmlFor={`service-${index}`} className="ml-3 text-sm text-gray-700">
+                          {service}
+                        </label>
+                      </div>
+                    ))}
                   </div>
                 </div>
 
