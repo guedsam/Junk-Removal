@@ -1,6 +1,3 @@
-'use client'
-
-import { useState } from 'react'
 import Link from 'next/link'
 import type { Metadata } from 'next'
 
@@ -15,115 +12,6 @@ const metadata: Metadata = {
 }
 
 export default function ContactPage() {
-  const [formData, setFormData] = useState({
-    name: '',
-    phone: '',
-    email: '',
-    zipCode: '',
-    serviceTypes: [] as string[],
-    description: ''
-  })
-
-  const [uploadedFiles, setUploadedFiles] = useState<File[]>([])
-  const [isSubmitting, setIsSubmitting] = useState(false)
-  const [submitMessage, setSubmitMessage] = useState('')
-
-  const handleInputChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
-    const { name, value } = e.target
-    setFormData(prev => ({
-      ...prev,
-      [name]: value
-    }))
-  }
-
-  const handleServiceTypeChange = (service: string) => {
-    setFormData(prev => ({
-      ...prev,
-      serviceTypes: prev.serviceTypes.includes(service)
-        ? prev.serviceTypes.filter(s => s !== service)
-        : [...prev.serviceTypes, service]
-    }))
-  }
-
-  const handleFileUpload = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const files = e.target.files
-    if (files) {
-      const imageFiles = Array.from(files).filter(file => file.type.startsWith('image/'))
-      if (imageFiles.length !== files.length) {
-        alert('Please upload only image files (JPG, PNG, GIF, etc.)')
-        e.target.value = ''
-        return
-      }
-      setUploadedFiles(prev => [...prev, ...imageFiles])
-    }
-  }
-
-  const removeFile = (index: number) => {
-    setUploadedFiles(prev => prev.filter((_, i) => i !== index))
-  }
-
-  const handleSubmit = async (e: React.FormEvent) => {
-    e.preventDefault()
-    setIsSubmitting(true)
-    setSubmitMessage('')
-
-    try {
-      // Use Formspree for reliable email delivery
-      const response = await fetch('https://formspree.io/f/xpzgkqko', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({
-          name: formData.name,
-          email: formData.email,
-          phone: formData.phone,
-          zipCode: formData.zipCode || 'Not provided',
-          services: formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified',
-          message: formData.description || 'No description provided',
-          subject: `New Junk Removal Quote Request from ${formData.name}`,
-          _replyto: formData.email,
-          _subject: `New Junk Removal Quote Request from ${formData.name}`,
-          _to: 'sam@asjunkremoval.com'
-        })
-      })
-
-      const result = await response.json()
-
-      if (response.ok) {
-        setSubmitMessage('Thank you! Your quote request has been submitted successfully. We\'ll contact you within 2 hours with your free quote.')
-        // Reset form
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          zipCode: '',
-          serviceTypes: [],
-          description: ''
-        })
-        setUploadedFiles([])
-      } else {
-        throw new Error('Form submission failed')
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-      // Always show success message for better UX
-      setSubmitMessage('Thank you! Your quote request has been received. We\'ll contact you within 2 hours with your free quote.')
-      // Reset form
-      setFormData({
-        name: '',
-        phone: '',
-        email: '',
-        zipCode: '',
-        serviceTypes: [],
-        description: ''
-      })
-      setUploadedFiles([])
-    } finally {
-      setIsSubmitting(false)
-    }
-  }
-
   const serviceTypes = [
     'Residential Junk Removal',
     'Commercial Junk Removal',
@@ -239,13 +127,12 @@ export default function ContactPage() {
             </div>
 
             <div className="bg-white rounded-2xl shadow-lg p-8">
-              {submitMessage && (
-                <div className="mb-8 p-4 bg-green-50 border border-green-200 rounded-lg">
-                  <p className="text-green-800 font-semibold">{submitMessage}</p>
+              <form name="contact" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="space-y-6">
+                {/* Hidden fields for Netlify */}
+                <input type="hidden" name="form-name" value="contact" />
+                <div style={{ display: 'none' }}>
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                 </div>
-              )}
-
-              <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   {/* Name */}
                   <div>
@@ -256,8 +143,6 @@ export default function ContactPage() {
                       type="text"
                       id="name"
                       name="name"
-                      value={formData.name}
-                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="Your full name"
@@ -273,8 +158,6 @@ export default function ContactPage() {
                       type="tel"
                       id="phone"
                       name="phone"
-                      value={formData.phone}
-                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="(503) 555-1234"
@@ -290,8 +173,6 @@ export default function ContactPage() {
                       type="email"
                       id="email"
                       name="email"
-                      value={formData.email}
-                      onChange={handleInputChange}
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="your@email.com"
@@ -307,8 +188,6 @@ export default function ContactPage() {
                       type="text"
                       id="zipCode"
                       name="zipCode"
-                      value={formData.zipCode}
-                      onChange={handleInputChange}
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                       placeholder="97045 (optional)"
                     />
@@ -326,8 +205,8 @@ export default function ContactPage() {
                         <input
                           type="checkbox"
                           id={`service-${index}`}
-                          checked={formData.serviceTypes.includes(service)}
-                          onChange={() => handleServiceTypeChange(service)}
+                          name="services"
+                          value={service}
                           className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                         />
                         <label htmlFor={`service-${index}`} className="ml-3 text-sm text-gray-700">
@@ -346,8 +225,6 @@ export default function ContactPage() {
                   <textarea
                     id="description"
                     name="description"
-                    value={formData.description}
-                    onChange={handleInputChange}
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
                     placeholder="Please describe what items you need removed, approximate quantity, and any special considerations (stairs, tight spaces, etc.)"
@@ -368,48 +245,17 @@ export default function ContactPage() {
                     name="images"
                     multiple
                     accept="image/*"
-                    onChange={handleFileUpload}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100"
                   />
-                  
-                  {/* Display uploaded files */}
-                  {uploadedFiles.length > 0 && (
-                    <div className="mt-4">
-                      <p className="text-sm font-semibold text-gray-700 mb-2">Uploaded Images:</p>
-                      <div className="space-y-2">
-                        {uploadedFiles.map((file, index) => (
-                          <div key={index} className="flex items-center justify-between bg-gray-50 p-3 rounded-lg">
-                            <div className="flex items-center space-x-3">
-                              <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16l4.586-4.586a2 2 0 012.828 0L16 16m-2-2l1.586-1.586a2 2 0 012.828 0L20 14m-6-6h.01M6 20h12a2 2 0 002-2V6a2 2 0 00-2-2H6a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                              <span className="text-sm text-gray-700">{file.name}</span>
-                              <span className="text-xs text-gray-500">({(file.size / 1024 / 1024).toFixed(2)} MB)</span>
-                            </div>
-                            <button
-                              type="button"
-                              onClick={() => removeFile(index)}
-                              className="text-red-600 hover:text-red-700 p-1"
-                            >
-                              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M6 18L18 6M6 6l12 12" />
-                              </svg>
-                            </button>
-                          </div>
-                        ))}
-                      </div>
-                    </div>
-                  )}
                 </div>
 
                 {/* Submit Button */}
                 <div className="text-center">
                   <button
                     type="submit"
-                    disabled={isSubmitting}
-                    className="btn-primary text-lg px-12 py-4 disabled:opacity-50 disabled:cursor-not-allowed"
+                    className="btn-primary text-lg px-12 py-4"
                   >
-                    {isSubmitting ? 'Submitting...' : 'Get My Free Quote'}
+                    Get My Free Quote
                   </button>
                   <p className="text-sm text-gray-500 mt-4">
                     * Required fields. We'll contact you within 2 hours with your free quote.
