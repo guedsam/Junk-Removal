@@ -304,7 +304,7 @@ export default function BlogPost() {
               <Link href="/blog/how-to-prepare-junk-removal-day" className="group">
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <img 
-                    src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80" 
+                    src="/images/junk-removal/junk-removal-preparation-tips.webp" 
                     alt="Preparing for junk removal day"
                     className="w-full h-48 object-cover"
                   />
@@ -322,7 +322,7 @@ export default function BlogPost() {
               <Link href="/blog/eco-friendly-junk-disposal-oregon-green" className="group">
                 <div className="bg-white rounded-xl shadow-lg overflow-hidden hover:shadow-xl transition-shadow duration-300">
                   <img 
-                    src="https://images.unsplash.com/photo-1532996122724-e3c354a0b15b?ixlib=rb-4.0.3&auto=format&fit=crop&w=600&h=300&q=80" 
+                    src="/images/junk-removal/eco-friendly-disposal-portland.webp" 
                     alt="Eco-friendly junk disposal"
                     className="w-full h-48 object-cover"
                   />
