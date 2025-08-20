@@ -103,6 +103,24 @@ const blogPosts = [
     readTime: '7 min read',
     slug: 'garage-cleanout-services-oregon-city',
     image: 'garage-cleanout-oregon-city.webp'
+  },
+  {
+    id: 12,
+    title: 'Moving Junk Removal Services in Portland & Oregon City: Your Complete Guide',
+    excerpt: 'Professional moving junk removal services to declutter before your move. Save money on moving costs with eco-friendly disposal and donation services.',
+    date: 'February 1, 2025',
+    readTime: '9 min read',
+    slug: 'moving-junk-removal-services-portland',
+    image: 'portland-junk-removal-team.webp'
+  },
+  {
+    id: 13,
+    title: 'Professional Attic Cleanout Services in Portland Oregon: Reclaim Your Space Safely',
+    excerpt: 'Expert attic cleanout services with safe removal of stored items, insulation, and clutter. Licensed, insured team with eco-friendly disposal practices.',
+    date: 'February 5, 2025',
+    readTime: '10 min read',
+    slug: 'attic-cleanout-services-portland-oregon',
+    image: 'professional-junk-removal-crew.webp'
   }
 ]
 
