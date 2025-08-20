@@ -121,6 +121,24 @@ const blogPosts = [
     readTime: '10 min read',
     slug: 'attic-cleanout-services-portland-oregon',
     image: 'professional-junk-removal-crew.webp'
+  },
+  {
+    id: 14,
+    title: 'Appliance Disposal & Recycling in Portland Oregon: Eco-Friendly Solutions',
+    excerpt: 'Professional appliance disposal and recycling services in Portland and Oregon City. EPA-compliant removal of refrigerators, washers, dryers, and more.',
+    date: 'February 10, 2025',
+    readTime: '8 min read',
+    slug: 'appliance-disposal-recycling-portland-oregon',
+    image: 'professional-junk-removal-crew.webp'
+  },
+  {
+    id: 15,
+    title: 'Furniture Donation & Disposal in Portland Oregon: Give Back to Your Community',
+    excerpt: 'Learn how to donate furniture in Portland and Oregon City. Professional furniture removal with charity partnerships and tax-deductible donation receipts.',
+    date: 'February 12, 2025',
+    readTime: '9 min read',
+    slug: 'furniture-donation-disposal-portland-oregon',
+    image: 'furniture-removal-oregon.webp'
   }
 ]
 
