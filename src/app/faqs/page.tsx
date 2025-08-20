@@ -205,8 +205,8 @@ export default function FAQsPage() {
                 </div>
                 <h3 className="text-lg font-semibold text-gray-900 mb-2">Email Us</h3>
                 <p className="text-gray-600 mb-2">Get detailed answers</p>
-                <a href="mailto:info@oregoncityjunkremoval.com" className="text-primary-600 hover:text-primary-700 font-semibold">
-                  info@oregoncityjunkremoval.com
+                <a href="mailto:junk@asjunkremoval.com" className="text-primary-600 hover:text-primary-700 font-semibold">
+                  junk@asjunkremoval.com
                 </a>
               </div>
 
