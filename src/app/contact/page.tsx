@@ -90,59 +90,52 @@ export default function ContactPage() {
     setIsSubmitting(true)
     
     try {
-      // Execute reCAPTCHA
-      if (recaptchaLoaded && window.grecaptcha) {
-        const token = await window.grecaptcha.execute('6LdS3KsrAAAAAKuEG_DKKKL5u0lqVgvPsmTrjVZa', { action: 'submit' })
-        
-        // Create FormData for file upload
-        const formDataToSend = new FormData()
-        Object.entries(formData).forEach(([key, value]) => {
-          if (key === 'serviceTypes') {
-            formDataToSend.append(key, JSON.stringify(value))
-          } else {
-            formDataToSend.append(key, value as string)
-          }
-        })
-        
-        // Add files
-        uploadedFiles.forEach((file, index) => {
-          formDataToSend.append(`image_${index}`, file)
-        })
-        
-        // Add reCAPTCHA token
-        formDataToSend.append('recaptcha_token', token)
-        
-        // Send to Formspree endpoint for sam@asjunkremoval.com
-        const response = await fetch('https://formspree.io/sam@asjunkremoval.com', {
-          method: 'POST',
-          body: formDataToSend,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
+      // Create a simple JSON payload
+      const submissionData = {
+        name: formData.name,
+        phone: formData.phone,
+        email: formData.email,
+        zipCode: formData.zipCode || 'Not provided',
+        services: formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified',
+        description: formData.description || 'No description provided',
+        timestamp: new Date().toISOString(),
+        _replyto: formData.email,
+        _subject: `New Junk Removal Quote Request from ${formData.name}`,
+        _to: 'sam@asjunkremoval.com'
+      }
 
-        if (response.ok) {
-          setIsSubmitting(false)
-          setSubmitMessage('Thank you! We\'ll contact you within 2 hours with your free quote.')
-          setFormData({
-            name: '',
-            phone: '',
-            email: '',
-            zipCode: '',
-            serviceTypes: [],
-            description: ''
-          })
-          setUploadedFiles([])
-        } else {
-          throw new Error('Form submission failed')
-        }
+      // Send to Formspree using the correct endpoint for sam@asjunkremoval.com
+      const response = await fetch('https://formspree.io/f/xpzgkqko', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+          'Accept': 'application/json'
+        },
+        body: JSON.stringify(submissionData)
+      })
+
+      const result = await response.json()
+
+      if (response.ok) {
+        setIsSubmitting(false)
+        setSubmitMessage('Thank you! We\'ll contact you within 2 hours with your free quote.')
+        setFormData({
+          name: '',
+          phone: '',
+          email: '',
+          zipCode: '',
+          serviceTypes: [],
+          description: ''
+        })
+        setUploadedFiles([])
       } else {
-        throw new Error('reCAPTCHA not loaded')
+        console.error('Formspree error:', result)
+        throw new Error(result.error || 'Form submission failed')
       }
     } catch (error) {
       console.error('Form submission error:', error)
       setIsSubmitting(false)
-      setSubmitMessage('There was an error submitting your form. Please try again or call us directly.')
+      setSubmitMessage('There was an error submitting your form. Please try again or call us directly at (503) 753-2329.')
     }
   }
 
