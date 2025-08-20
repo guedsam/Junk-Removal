@@ -25,6 +25,11 @@ export const metadata: Metadata = {
   alternates: {
     canonical: '/',
   },
+  icons: {
+    icon: '/images/junk-removal/icon.png',
+    shortcut: '/images/junk-removal/icon.png',
+    apple: '/images/junk-removal/icon.png',
+  },
   openGraph: {
     title: 'Andrew and Sons Junk Removal | Fast & Affordable Junk Hauling Portland',
     description: 'Professional junk removal services in Oregon City, Portland, and surrounding areas. Same-day pickup, eco-friendly disposal, and affordable rates.',
