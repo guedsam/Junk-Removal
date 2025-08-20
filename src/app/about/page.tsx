@@ -150,7 +150,7 @@ export default function AboutPage() {
                 "We don't just remove junk - we help our community and protect our environment."
               </h3>
               <p className="text-primary-100">
-                - Mike & Sarah Thompson, Founders
+                - Andrew, Founder
               </p>
             </div>
           </div>
