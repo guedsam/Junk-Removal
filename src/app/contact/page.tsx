@@ -85,58 +85,49 @@ export default function ContactPage() {
     setUploadedFiles(prev => prev.filter((_, i) => i !== index))
   }
 
-  const handleSubmit = async (e: React.FormEvent) => {
+  const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault()
-    setIsSubmitting(true)
     
-    try {
-      // Create a simple JSON payload
-      const submissionData = {
-        name: formData.name,
-        phone: formData.phone,
-        email: formData.email,
-        zipCode: formData.zipCode || 'Not provided',
-        services: formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified',
-        description: formData.description || 'No description provided',
-        timestamp: new Date().toISOString(),
-        _replyto: formData.email,
-        _subject: `New Junk Removal Quote Request from ${formData.name}`,
-        _to: 'sam@asjunkremoval.com'
-      }
+    // Create email body with all form data
+    const services = formData.serviceTypes.length > 0 ? formData.serviceTypes.join(', ') : 'Not specified'
+    const zipCode = formData.zipCode || 'Not provided'
+    const description = formData.description || 'No description provided'
+    
+    const emailBody = `
+New Junk Removal Quote Request
 
-      // Send to Formspree using the correct endpoint for sam@asjunkremoval.com
-      const response = await fetch('https://formspree.io/f/xpzgkqko', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          'Accept': 'application/json'
-        },
-        body: JSON.stringify(submissionData)
-      })
+Customer Information:
+- Name: ${formData.name}
+- Phone: ${formData.phone}
+- Email: ${formData.email}
+- Zip Code: ${zipCode}
 
-      const result = await response.json()
+Services Requested:
+${services}
 
-      if (response.ok) {
-        setIsSubmitting(false)
-        setSubmitMessage('Thank you! We\'ll contact you within 2 hours with your free quote.')
-        setFormData({
-          name: '',
-          phone: '',
-          email: '',
-          zipCode: '',
-          serviceTypes: [],
-          description: ''
-        })
-        setUploadedFiles([])
-      } else {
-        console.error('Formspree error:', result)
-        throw new Error(result.error || 'Form submission failed')
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-      setIsSubmitting(false)
-      setSubmitMessage('There was an error submitting your form. Please try again or call us directly at (503) 753-2329.')
-    }
+Description:
+${description}
+
+Submitted: ${new Date().toLocaleString()}
+    `.trim()
+
+    const subject = `New Junk Removal Quote Request from ${formData.name}`
+    const mailtoLink = `mailto:sam@asjunkremoval.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(emailBody)}`
+    
+    // Open email client
+    window.location.href = mailtoLink
+    
+    // Show success message and reset form
+    setSubmitMessage('Your email client should open with the quote request. Please send the email to complete your request.')
+    setFormData({
+      name: '',
+      phone: '',
+      email: '',
+      zipCode: '',
+      serviceTypes: [],
+      description: ''
+    })
+    setUploadedFiles([])
   }
 
   const serviceTypes = [
