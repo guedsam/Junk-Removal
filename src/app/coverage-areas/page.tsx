@@ -150,8 +150,8 @@ export default function CoverageAreasPage() {
             <Link href="/contact" className="btn-primary">
               Get Free Quote
             </Link>
-            <a href="tel:503-746-9999" className="btn-secondary">
-              Call (503) 746-9999
+            <a href="tel:503-753-2329" className="btn-secondary">
+              Call (503) 753-2329
             </a>
           </div>
         </div>
@@ -459,8 +459,8 @@ export default function CoverageAreasPage() {
             <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">
               Get Your Free Quote
             </Link>
-            <a href="tel:503-746-9999" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
-              Call (503) 746-9999
+            <a href="tel:503-753-2329" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
+              Call (503) 753-2329
             </a>
           </div>
         </div>
