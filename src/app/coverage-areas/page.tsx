@@ -3,11 +3,23 @@ import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
   title: 'Junk Removal Coverage Areas | Oregon City, Portland & Surrounding Areas',
-  description: 'Andrew and Sons Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas. Local junk removal near you.',
+  description: 'AS Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas. Local junk removal near you.',
   keywords: 'junk removal Oregon City, junk hauling Portland, junk removal Clackamas, junk removal Gresham, junk removal Milwaukie, local junk removal near me',
   openGraph: {
     title: 'Junk Removal Coverage Areas | Oregon City, Portland & Surrounding Areas',
-    description: 'Andrew and Sons Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas.',
+    description: 'AS Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas.',
+    url: 'https://asjunkremoval.com/coverage-areas',
+    siteName: 'AS Junk Removal',
+    locale: 'en_US',
+    type: 'website',
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Junk Removal Coverage Areas | Oregon City, Portland & Surrounding Areas',
+    description: 'AS Junk Removal serves Portland, Clackamas, Gresham, Milwaukie, Happy Valley, Lake Oswego, West Linn and surrounding areas.',
+  },
+  alternates: {
+    canonical: 'https://asjunkremoval.com/coverage-areas',
   },
 }
 
@@ -138,8 +150,8 @@ export default function CoverageAreasPage() {
             <Link href="/contact" className="btn-primary">
               Get Free Quote
             </Link>
-            <a href="tel:+15037532329" className="btn-secondary">
-              Call (503) 753-2329
+            <a href="tel:503-746-9999" className="btn-secondary">
+              Call (503) 746-9999
             </a>
           </div>
         </div>
@@ -160,9 +172,11 @@ export default function CoverageAreasPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {primaryAreas.map((area, index) => (
               <div key={index} className="bg-gray-50 rounded-xl p-8 hover:shadow-lg transition-shadow duration-300">
-                <h3 className="text-2xl font-bold text-gray-900 mb-4">
-                  {area.name}
-                </h3>
+                <Link href={`/${area.name.toLowerCase().replace(' ', '-')}-junk-removal`} className="block">
+                  <h3 className="text-2xl font-bold text-gray-900 mb-4 hover:text-primary-600 transition-colors">
+                    {area.name} Junk Removal →
+                  </h3>
+                </Link>
                 <p className="text-gray-600 mb-6">
                   {area.description}
                 </p>
@@ -207,9 +221,17 @@ export default function CoverageAreasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {secondaryAreas.map((area, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                  {area.name}
-                </h3>
+                {area.name !== 'West Linn' ? (
+                  <Link href={`/${area.name.toLowerCase().replace(' ', '-')}-junk-removal`} className="block">
+                    <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                      {area.name} Junk Removal →
+                    </h3>
+                  </Link>
+                ) : (
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
+                    {area.name}
+                  </h3>
+                )}
                 
                 <div className="mb-4">
                   <h4 className="font-medium text-gray-700 mb-2">Services Available:</h4>
@@ -431,14 +453,14 @@ export default function CoverageAreasPage() {
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
             No matter where you are in our service area, we're ready to help. 
-            Get your free quote today and experience the Andrew and Sons Junk Removal difference.
+            Get your free quote today and experience the AS Junk Removal difference.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <Link href="/contact" className="bg-white text-primary-600 hover:bg-gray-100 font-semibold py-4 px-8 rounded-lg transition-colors duration-200 shadow-lg">
               Get Your Free Quote
             </Link>
-            <a href="tel:+15037532329" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
-              Call (503) 753-2329
+            <a href="tel:503-746-9999" className="border-2 border-white text-white hover:bg-white hover:text-primary-600 font-semibold py-4 px-8 rounded-lg transition-all duration-200">
+              Call (503) 746-9999
             </a>
           </div>
         </div>
