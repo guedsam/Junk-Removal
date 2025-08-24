@@ -79,22 +79,22 @@ export default function HomePage() {
 
   const blogPosts = [
     {
-      title: 'Top 5 Reasons to Hire a Junk Removal Company in Portland',
-      excerpt: 'Discover why professional junk removal is the smart choice for Portland homeowners and businesses.',
-      slug: 'top-5-reasons-hire-junk-removal-portland',
-      date: 'January 15, 2024'
+      title: 'Senior Downsizing & Junk Removal Services in Portland: Compassionate Support for Life Transitions',
+      excerpt: 'Professional senior downsizing and junk removal services with compassionate support for seniors transitioning to smaller homes.',
+      slug: 'senior-downsizing-junk-removal-portland',
+      date: 'August 24, 2025'
     },
     {
-      title: 'Eco-Friendly Junk Disposal: How We Keep Oregon Green',
-      excerpt: 'Learn about our commitment to environmentally responsible junk disposal and recycling practices.',
-      slug: 'eco-friendly-junk-disposal-oregon-green',
-      date: 'January 10, 2024'
+      title: 'Furniture Donation & Disposal in Portland Oregon: Give Back to Your Community',
+      excerpt: 'Learn how to donate furniture in Portland and Oregon City. Professional furniture removal with charity partnerships.',
+      slug: 'furniture-donation-disposal-portland-oregon',
+      date: 'February 12, 2025'
     },
     {
-      title: 'Junk Removal vs Dumpster Rental: Which is Right for You?',
-      excerpt: 'Compare the pros and cons of junk removal services versus dumpster rentals for your project.',
-      slug: 'junk-removal-vs-dumpster-rental',
-      date: 'January 5, 2024'
+      title: 'Appliance Disposal & Recycling in Portland Oregon: Eco-Friendly Solutions',
+      excerpt: 'Professional appliance disposal and recycling services in Portland and Oregon City. EPA-compliant removal of appliances.',
+      slug: 'appliance-disposal-recycling-portland-oregon',
+      date: 'February 10, 2025'
     }
   ]
 
@@ -286,7 +286,7 @@ export default function HomePage() {
             {blogPosts.map((post, index) => (
               <article key={index} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <img 
-                  src={`/images/junk-removal/${index === 0 ? 'oregon-city-junk-hauling.webp' : index === 1 ? 'eco-friendly-disposal-portland.webp' : 'furniture-removal-oregon.webp'}`}
+                  src={`/images/junk-removal/${index === 0 ? 'professional-junk-removal-crew.webp' : index === 1 ? 'furniture-removal-oregon.webp' : 'professional-junk-removal-crew.webp'}`}
                   alt={post.title}
                   className="w-full h-48 object-cover"
                 />

@@ -6,58 +6,67 @@ import { useState } from 'react'
 
 const blogPosts = [
   {
-    id: 1,
-    title: 'Top 5 Reasons to Hire a Junk Removal Company in Portland',
-    excerpt: 'Discover why professional junk removal services in Portland save you time, money, and hassle compared to DIY approaches.',
-    date: 'December 15, 2024',
-    readTime: '5 min read',
-    slug: 'top-5-reasons-hire-junk-removal-portland',
-    image: 'oregon-city-junk-hauling.webp'
+    id: 16,
+    title: 'Senior Downsizing & Junk Removal Services in Portland: Compassionate Support for Life Transitions',
+    excerpt: 'Professional senior downsizing and junk removal services with compassionate support for seniors transitioning to smaller homes or assisted living facilities.',
+    date: 'August 24, 2025',
+    readTime: '12 min read',
+    slug: 'senior-downsizing-junk-removal-portland',
+    image: 'professional-junk-removal-crew.webp'
   },
   {
-    id: 2,
-    title: 'Eco-Friendly Junk Disposal: How We Keep Oregon Green',
-    excerpt: 'Learn about our sustainable junk removal practices and how we responsibly dispose of items while protecting Oregon\'s environment.',
-    date: 'December 10, 2024',
-    readTime: '6 min read',
-    slug: 'eco-friendly-junk-disposal-oregon-green',
-    image: 'eco-friendly-disposal-portland.webp'
-  },
-  {
-    id: 3,
-    title: 'Junk Removal vs Dumpster Rental: Which is Right for You?',
-    excerpt: 'Compare junk removal services with dumpster rentals to determine the best solution for your Oregon City or Portland project.',
-    date: 'December 5, 2024',
-    readTime: '7 min read',
-    slug: 'junk-removal-vs-dumpster-rental-comparison',
+    id: 15,
+    title: 'Furniture Donation & Disposal in Portland Oregon: Give Back to Your Community',
+    excerpt: 'Learn how to donate furniture in Portland and Oregon City. Professional furniture removal with charity partnerships and tax-deductible donation receipts.',
+    date: 'February 12, 2025',
+    readTime: '9 min read',
+    slug: 'furniture-donation-disposal-portland-oregon',
     image: 'furniture-removal-oregon.webp'
   },
   {
-    id: 4,
-    title: 'How to Prepare for Junk Removal Day',
-    excerpt: 'Get ready for your junk removal appointment with our comprehensive preparation guide. Learn how to sort, organize, and prepare your items for efficient pickup.',
-    date: 'December 20, 2024',
+    id: 14,
+    title: 'Appliance Disposal & Recycling in Portland Oregon: Eco-Friendly Solutions',
+    excerpt: 'Professional appliance disposal and recycling services in Portland and Oregon City. EPA-compliant removal of refrigerators, washers, dryers, and more.',
+    date: 'February 10, 2025',
     readTime: '8 min read',
-    slug: 'how-to-prepare-junk-removal-day',
-    image: 'junk-removal-preparation-tips.webp'
+    slug: 'appliance-disposal-recycling-portland-oregon',
+    image: 'professional-junk-removal-crew.webp'
   },
   {
-    id: 5,
-    title: 'Estate Cleanout Services in Oregon City & Portland',
-    excerpt: 'Compassionate, professional estate cleanout services to help families during difficult times. We handle everything with care and respect.',
-    date: 'December 18, 2024',
+    id: 13,
+    title: 'Professional Attic Cleanout Services in Portland Oregon: Reclaim Your Space Safely',
+    excerpt: 'Expert attic cleanout services with safe removal of stored items, insulation, and clutter. Licensed, insured team with eco-friendly disposal practices.',
+    date: 'February 5, 2025',
     readTime: '10 min read',
-    slug: 'estate-cleanout-services-oregon-city',
-    image: 'estate-cleanout-oregon-city.webp'
+    slug: 'attic-cleanout-services-portland-oregon',
+    image: 'professional-junk-removal-crew.webp'
   },
   {
-    id: 6,
-    title: 'Construction Debris Removal in Portland & Oregon City',
-    excerpt: 'Professional construction debris removal services for contractors, builders, and homeowners. Safe, efficient cleanup of all construction waste.',
-    date: 'December 12, 2024',
+    id: 12,
+    title: 'Moving Junk Removal Services in Portland & Oregon City: Your Complete Guide',
+    excerpt: 'Professional moving junk removal services to declutter before your move. Save money on moving costs with eco-friendly disposal and donation services.',
+    date: 'February 1, 2025',
     readTime: '9 min read',
-    slug: 'construction-debris-removal-portland',
-    image: 'construction-debris-removal-portland.webp'
+    slug: 'moving-junk-removal-services-portland',
+    image: 'portland-junk-removal-team.webp'
+  },
+  {
+    id: 11,
+    title: 'Garage Cleanout Services in Oregon City: Reclaim Your Space',
+    excerpt: 'Transform your cluttered garage into organized, functional space with professional garage cleanout services. Same-day service available in Oregon City and Portland.',
+    date: 'January 25, 2025',
+    readTime: '7 min read',
+    slug: 'garage-cleanout-services-oregon-city',
+    image: 'garage-cleanout-oregon-city.webp'
+  },
+  {
+    id: 10,
+    title: 'Basement Cleanout Services in Portland Oregon: Reclaim Your Space',
+    excerpt: 'Professional basement cleanout services to transform your cluttered basement into functional, organized space. Safe removal of old furniture, appliances, and clutter.',
+    date: 'January 20, 2025',
+    readTime: '8 min read',
+    slug: 'basement-cleanout-services-portland-oregon',
+    image: 'basement-cleanout-portland.webp'
   },
   {
     id: 7,
@@ -87,57 +96,57 @@ const blogPosts = [
     image: 'office-cleanout-commercial-portland.webp'
   },
   {
-    id: 10,
-    title: 'Basement Cleanout Services in Portland Oregon: Reclaim Your Space',
-    excerpt: 'Professional basement cleanout services to transform your cluttered basement into functional, organized space. Safe removal of old furniture, appliances, and clutter.',
-    date: 'January 20, 2025',
+    id: 4,
+    title: 'How to Prepare for Junk Removal Day',
+    excerpt: 'Get ready for your junk removal appointment with our comprehensive preparation guide. Learn how to sort, organize, and prepare your items for efficient pickup.',
+    date: 'December 20, 2024',
     readTime: '8 min read',
-    slug: 'basement-cleanout-services-portland-oregon',
-    image: 'basement-cleanout-portland.webp'
+    slug: 'how-to-prepare-junk-removal-day',
+    image: 'junk-removal-preparation-tips.webp'
   },
   {
-    id: 11,
-    title: 'Garage Cleanout Services in Oregon City: Reclaim Your Space',
-    excerpt: 'Transform your cluttered garage into organized, functional space with professional garage cleanout services. Same-day service available in Oregon City and Portland.',
-    date: 'January 25, 2025',
-    readTime: '7 min read',
-    slug: 'garage-cleanout-services-oregon-city',
-    image: 'garage-cleanout-oregon-city.webp'
-  },
-  {
-    id: 12,
-    title: 'Moving Junk Removal Services in Portland & Oregon City: Your Complete Guide',
-    excerpt: 'Professional moving junk removal services to declutter before your move. Save money on moving costs with eco-friendly disposal and donation services.',
-    date: 'February 1, 2025',
-    readTime: '9 min read',
-    slug: 'moving-junk-removal-services-portland',
-    image: 'portland-junk-removal-team.webp'
-  },
-  {
-    id: 13,
-    title: 'Professional Attic Cleanout Services in Portland Oregon: Reclaim Your Space Safely',
-    excerpt: 'Expert attic cleanout services with safe removal of stored items, insulation, and clutter. Licensed, insured team with eco-friendly disposal practices.',
-    date: 'February 5, 2025',
+    id: 5,
+    title: 'Estate Cleanout Services in Oregon City & Portland',
+    excerpt: 'Compassionate, professional estate cleanout services to help families during difficult times. We handle everything with care and respect.',
+    date: 'December 18, 2024',
     readTime: '10 min read',
-    slug: 'attic-cleanout-services-portland-oregon',
-    image: 'professional-junk-removal-crew.webp'
+    slug: 'estate-cleanout-services-oregon-city',
+    image: 'estate-cleanout-oregon-city.webp'
   },
   {
-    id: 14,
-    title: 'Appliance Disposal & Recycling in Portland Oregon: Eco-Friendly Solutions',
-    excerpt: 'Professional appliance disposal and recycling services in Portland and Oregon City. EPA-compliant removal of refrigerators, washers, dryers, and more.',
-    date: 'February 10, 2025',
-    readTime: '8 min read',
-    slug: 'appliance-disposal-recycling-portland-oregon',
-    image: 'professional-junk-removal-crew.webp'
+    id: 1,
+    title: 'Top 5 Reasons to Hire a Junk Removal Company in Portland',
+    excerpt: 'Discover why professional junk removal services in Portland save you time, money, and hassle compared to DIY approaches.',
+    date: 'December 15, 2024',
+    readTime: '5 min read',
+    slug: 'top-5-reasons-hire-junk-removal-portland',
+    image: 'oregon-city-junk-hauling.webp'
   },
   {
-    id: 15,
-    title: 'Furniture Donation & Disposal in Portland Oregon: Give Back to Your Community',
-    excerpt: 'Learn how to donate furniture in Portland and Oregon City. Professional furniture removal with charity partnerships and tax-deductible donation receipts.',
-    date: 'February 12, 2025',
+    id: 6,
+    title: 'Construction Debris Removal in Portland & Oregon City',
+    excerpt: 'Professional construction debris removal services for contractors, builders, and homeowners. Safe, efficient cleanup of all construction waste.',
+    date: 'December 12, 2024',
     readTime: '9 min read',
-    slug: 'furniture-donation-disposal-portland-oregon',
+    slug: 'construction-debris-removal-portland',
+    image: 'construction-debris-removal-portland.webp'
+  },
+  {
+    id: 2,
+    title: 'Eco-Friendly Junk Disposal: How We Keep Oregon Green',
+    excerpt: 'Learn about our sustainable junk removal practices and how we responsibly dispose of items while protecting Oregon\'s environment.',
+    date: 'December 10, 2024',
+    readTime: '6 min read',
+    slug: 'eco-friendly-junk-disposal-oregon-green',
+    image: 'eco-friendly-disposal-portland.webp'
+  },
+  {
+    id: 3,
+    title: 'Junk Removal vs Dumpster Rental: Which is Right for You?',
+    excerpt: 'Compare junk removal services with dumpster rentals to determine the best solution for your Oregon City or Portland project.',
+    date: 'December 5, 2024',
+    readTime: '7 min read',
+    slug: 'junk-removal-vs-dumpster-rental-comparison',
     image: 'furniture-removal-oregon.webp'
   }
 ]
