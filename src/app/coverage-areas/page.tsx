@@ -221,17 +221,11 @@ export default function CoverageAreasPage() {
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {secondaryAreas.map((area, index) => (
               <div key={index} className="bg-white rounded-lg p-6 shadow-sm hover:shadow-md transition-shadow duration-300">
-                {area.name !== 'West Linn' ? (
-                  <Link href={`/${area.name.toLowerCase().replace(' ', '-')}-junk-removal`} className="block">
-                    <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
-                      {area.name} Junk Removal →
-                    </h3>
-                  </Link>
-                ) : (
-                  <h3 className="text-xl font-semibold text-gray-900 mb-3">
-                    {area.name}
+                <Link href={`/${area.name.toLowerCase().replace(' ', '-')}-junk-removal`} className="block">
+                  <h3 className="text-xl font-semibold text-gray-900 mb-3 hover:text-primary-600 transition-colors">
+                    {area.name} Junk Removal →
                   </h3>
-                )}
+                </Link>
                 
                 <div className="mb-4">
                   <h4 className="font-medium text-gray-700 mb-2">Services Available:</h4>

@@ -13,14 +13,14 @@ export default function Footer() {
   ]
 
   const areas = [
-    'Oregon City',
-    'Portland',
-    'Clackamas',
-    'Gresham',
-    'Milwaukie',
-    'Happy Valley',
-    'Lake Oswego',
-    'West Linn'
+    { name: 'Oregon City', slug: 'oregon-city-junk-removal' },
+    { name: 'Portland', slug: 'portland-junk-removal' },
+    { name: 'Clackamas', slug: 'clackamas-junk-removal' },
+    { name: 'Gresham', slug: 'gresham-junk-removal' },
+    { name: 'Milwaukie', slug: 'milwaukie-junk-removal' },
+    { name: 'Happy Valley', slug: 'happy-valley-junk-removal' },
+    { name: 'Lake Oswego', slug: 'lake-oswego-junk-removal' },
+    { name: 'West Linn', slug: 'west-linn-junk-removal' }
   ]
 
   return (
@@ -77,12 +77,17 @@ export default function Footer() {
             <h4 className="text-lg font-semibold mb-4">Coverage Areas</h4>
             <ul className="space-y-2">
               {areas.map((area) => (
-                <li key={area}>
-                  <Link href="/coverage-areas" className="text-gray-300 hover:text-primary-400 text-sm transition-colors duration-200">
-                    {area}
+                <li key={area.slug}>
+                  <Link href={`/${area.slug}`} className="text-gray-300 hover:text-primary-400 text-sm transition-colors duration-200">
+                    {area.name}
                   </Link>
                 </li>
               ))}
+              <li className="pt-2 border-t border-gray-700">
+                <Link href="/coverage-areas" className="text-primary-400 hover:text-primary-300 text-sm font-medium transition-colors duration-200">
+                  View All Coverage Areas →
+                </Link>
+              </li>
             </ul>
           </div>
 
