@@ -72,6 +72,9 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <script src="https://www.google.com/recaptcha/api.js" async defer></script>
+      </head>
       <body className={inter.className}>
         <Header />
         <main>{children}</main>
