@@ -596,9 +596,9 @@ export default function HomePage() {
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-8">
-              <form name="home-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="space-y-6">
+              <form name="homepage-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="space-y-6">
                 {/* Hidden fields for Netlify */}
-                <input type="hidden" name="form-name" value="home-quote" />
+                <input type="hidden" name="form-name" value="homepage-quote" />
                 <div style={{ display: 'none' }}>
                   <label>Don't fill this out if you're human: <input name="bot-field" /></label>
                 </div>
