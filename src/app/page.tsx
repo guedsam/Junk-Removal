@@ -596,7 +596,7 @@ export default function HomePage() {
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-8">
-              <form name="home-quote" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" className="space-y-6">
+              <form name="home-quote" method="POST" data-netlify="true" netlify-honeypot="bot-field" className="space-y-6">
                 {/* Hidden fields for Netlify */}
                 <input type="hidden" name="form-name" value="home-quote" />
                 <div style={{ display: 'none' }}>
@@ -800,10 +800,6 @@ export default function HomePage() {
                   />
                 </div>
 
-                {/* reCAPTCHA */}
-                <div className="flex justify-center">
-                  <div data-netlify-recaptcha="true"></div>
-                </div>
 
                 {/* Submit Button */}
                 <div className="text-center">
