@@ -4,6 +4,8 @@
 
 [build.environment]
   NODE_VERSION = "18"
+  RECAPTCHA_SITE_KEY = "6LdS3KsrAAAAAKuEG_DKKKL5u0lqVgvPsmTrjVZa"
+  RECAPTCHA_SECRET_KEY = "6LdS3KsrAAAAACb9JuM_ukEeiGkQpWFtHJADdc9s"
 
 [[redirects]]
   from = "/*"

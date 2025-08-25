@@ -596,200 +596,216 @@ export default function HomePage() {
             </div>
 
             <div className="bg-gray-50 rounded-2xl p-8">
-              <form className="space-y-6">
+              <form name="home-quote" method="POST" data-netlify="true" data-netlify-recaptcha="true" netlify-honeypot="bot-field" className="space-y-6">
+                {/* Hidden fields for Netlify */}
+                <input type="hidden" name="form-name" value="home-quote" />
+                <div style={{ display: 'none' }}>
+                  <label>Don't fill this out if you're human: <input name="bot-field" /></label>
+                </div>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+                  {/* Name */}
                   <div>
-                    <label htmlFor="firstName" className="block text-sm font-medium text-gray-700 mb-2">
-                      First Name *
+                    <label htmlFor="name" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Full Name *
                     </label>
                     <input
                       type="text"
-                      id="firstName"
-                      name="firstName"
+                      id="name"
+                      name="name"
                       required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                      placeholder="Enter your first name"
+                      placeholder="Your full name"
                     />
                   </div>
+
+                  {/* Phone */}
                   <div>
-                    <label htmlFor="email" className="block text-sm font-medium text-gray-700 mb-2">
-                      Email Address
+                    <label htmlFor="phone" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Phone Number *
+                    </label>
+                    <input
+                      type="tel"
+                      id="phone"
+                      name="phone"
+                      required
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      placeholder="(503) 555-1234"
+                    />
+                  </div>
+
+                  {/* Email */}
+                  <div>
+                    <label htmlFor="email" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Email Address *
                     </label>
                     <input
                       type="email"
                       id="email"
                       name="email"
+                      required
                       className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                      placeholder="Enter your email address"
+                      placeholder="your@email.com"
+                    />
+                  </div>
+
+                  {/* Zip Code */}
+                  <div>
+                    <label htmlFor="zipCode" className="block text-sm font-semibold text-gray-700 mb-2">
+                      Zip Code
+                    </label>
+                    <input
+                      type="text"
+                      id="zipCode"
+                      name="zipCode"
+                      className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
+                      placeholder="97045 (optional)"
                     />
                   </div>
                 </div>
 
+                {/* Services Multi-Select */}
                 <div>
-                  <label htmlFor="phone" className="block text-sm font-medium text-gray-700 mb-2">
-                    Phone Number *
-                  </label>
-                  <input
-                    type="tel"
-                    id="phone"
-                    name="phone"
-                    required
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                    placeholder="Enter your phone number"
-                  />
-                </div>
-
-                <div>
-                  <label className="block text-sm font-medium text-gray-700 mb-4">
-                    Service Type *
+                  <label className="block text-sm font-semibold text-gray-700 mb-3">
+                    Services Needed (Select all that apply)
                   </label>
                   <div className="grid grid-cols-1 md:grid-cols-2 gap-3">
                     <div className="flex items-center">
                       <input
-                        id="residential"
-                        name="serviceType"
                         type="checkbox"
-                        value="residential"
+                        id="service-0"
+                        name="services"
+                        value="Residential Junk Removal"
                         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="residential" className="ml-2 block text-sm text-gray-700">
+                      <label htmlFor="service-0" className="ml-3 text-sm text-gray-700">
                         Residential Junk Removal
                       </label>
                     </div>
                     <div className="flex items-center">
                       <input
-                        id="commercial"
-                        name="serviceType"
                         type="checkbox"
-                        value="commercial"
+                        id="service-1"
+                        name="services"
+                        value="Commercial Junk Removal"
                         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="commercial" className="ml-2 block text-sm text-gray-700">
+                      <label htmlFor="service-1" className="ml-3 text-sm text-gray-700">
                         Commercial Junk Removal
                       </label>
                     </div>
                     <div className="flex items-center">
                       <input
-                        id="furniture"
-                        name="serviceType"
                         type="checkbox"
-                        value="furniture"
+                        id="service-2"
+                        name="services"
+                        value="Furniture Removal"
                         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="furniture" className="ml-2 block text-sm text-gray-700">
+                      <label htmlFor="service-2" className="ml-3 text-sm text-gray-700">
                         Furniture Removal
                       </label>
                     </div>
                     <div className="flex items-center">
                       <input
-                        id="appliance"
-                        name="serviceType"
                         type="checkbox"
-                        value="appliance"
+                        id="service-3"
+                        name="services"
+                        value="Appliance Removal"
                         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="appliance" className="ml-2 block text-sm text-gray-700">
+                      <label htmlFor="service-3" className="ml-3 text-sm text-gray-700">
                         Appliance Removal
                       </label>
                     </div>
                     <div className="flex items-center">
                       <input
-                        id="construction"
-                        name="serviceType"
                         type="checkbox"
-                        value="construction"
+                        id="service-4"
+                        name="services"
+                        value="Yard Waste Removal"
                         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="construction" className="ml-2 block text-sm text-gray-700">
-                        Construction Debris
-                      </label>
-                    </div>
-                    <div className="flex items-center">
-                      <input
-                        id="yard-waste"
-                        name="serviceType"
-                        type="checkbox"
-                        value="yard-waste"
-                        className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                      />
-                      <label htmlFor="yard-waste" className="ml-2 block text-sm text-gray-700">
+                      <label htmlFor="service-4" className="ml-3 text-sm text-gray-700">
                         Yard Waste Removal
                       </label>
                     </div>
                     <div className="flex items-center">
                       <input
-                        id="estate"
-                        name="serviceType"
                         type="checkbox"
-                        value="estate"
+                        id="service-5"
+                        name="services"
+                        value="Construction Debris"
                         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="estate" className="ml-2 block text-sm text-gray-700">
+                      <label htmlFor="service-5" className="ml-3 text-sm text-gray-700">
+                        Construction Debris
+                      </label>
+                    </div>
+                    <div className="flex items-center">
+                      <input
+                        type="checkbox"
+                        id="service-6"
+                        name="services"
+                        value="Estate Cleanout"
+                        className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
+                      />
+                      <label htmlFor="service-6" className="ml-3 text-sm text-gray-700">
                         Estate Cleanout
                       </label>
                     </div>
                     <div className="flex items-center">
                       <input
-                        id="other"
-                        name="serviceType"
                         type="checkbox"
-                        value="other"
+                        id="service-7"
+                        name="services"
+                        value="Other"
                         className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
                       />
-                      <label htmlFor="other" className="ml-2 block text-sm text-gray-700">
+                      <label htmlFor="service-7" className="ml-3 text-sm text-gray-700">
                         Other
                       </label>
                     </div>
                   </div>
                 </div>
 
+                {/* Description */}
                 <div>
-                  <label htmlFor="loadSize" className="block text-sm font-medium text-gray-700 mb-2">
-                    Estimated Load Size
-                  </label>
-                  <select
-                    id="loadSize"
-                    name="loadSize"
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                  >
-                    <option value="">Select load size</option>
-                    <option value="small">Small Load (1/4 truck)</option>
-                    <option value="medium">Medium Load (1/2 truck)</option>
-                    <option value="large">Large Load (full truck)</option>
-                    <option value="multiple">Multiple Loads</option>
-                  </select>
-                </div>
-
-                <div>
-                  <label htmlFor="description" className="block text-sm font-medium text-gray-700 mb-2">
-                    Description of Items
+                  <label htmlFor="description" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Describe Your Junk Removal Needs
                   </label>
                   <textarea
                     id="description"
                     name="description"
                     rows={4}
                     className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors"
-                    placeholder="Please describe the items you need removed (e.g., old furniture, appliances, construction debris, etc.)"
-                  ></textarea>
+                    placeholder="Please describe what items you need removed, approximate quantity, and any special considerations (stairs, tight spaces, etc.)"
+                  />
                 </div>
 
-                <div className="flex items-center">
-                  <input
-                    id="sameDay"
-                    name="sameDay"
-                    type="checkbox"
-                    className="h-4 w-4 text-primary-600 focus:ring-primary-500 border-gray-300 rounded"
-                  />
-                  <label htmlFor="sameDay" className="ml-2 block text-sm text-gray-700">
-                    I need same-day service
+                {/* File Upload */}
+                <div>
+                  <label htmlFor="images" className="block text-sm font-semibold text-gray-700 mb-2">
+                    Upload Images (Optional)
                   </label>
+                  <p className="text-sm text-gray-500 mb-3">
+                    Upload photos of the items you need removed to help us provide a more accurate quote. Images only (JPG, PNG, GIF).
+                  </p>
+                  <input
+                    type="file"
+                    id="images"
+                    name="images"
+                    multiple
+                    accept="image/*"
+                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-primary-500 focus:border-primary-500 transition-colors file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-sm file:font-semibold file:bg-primary-50 file:text-primary-700 hover:file:bg-primary-100"
+                  />
                 </div>
 
                 {/* reCAPTCHA */}
                 <div className="flex justify-center">
-                  <div className="g-recaptcha" data-sitekey="your-recaptcha-site-key"></div>
+                  <div data-netlify-recaptcha="true"></div>
                 </div>
 
+                {/* Submit Button */}
                 <div className="text-center">
                   <button
                     type="submit"
@@ -798,8 +814,7 @@ export default function HomePage() {
                     Get My Free Quote
                   </button>
                   <p className="text-sm text-gray-500 mt-4">
-                    By submitting this form, you agree to receive communications from Andrew and Sons Junk Removal. 
-                    We respect your privacy and will never share your information.
+                    * Required fields. We'll contact you within 2 hours with your free quote.
                   </p>
                 </div>
               </form>
