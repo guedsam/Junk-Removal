@@ -249,6 +249,11 @@ export default function ContactPage() {
                   />
                 </div>
 
+                {/* reCAPTCHA */}
+                <div className="flex justify-center">
+                  <div data-netlify-recaptcha="true"></div>
+                </div>
+
                 {/* Submit Button */}
                 <div className="text-center">
                   <button
