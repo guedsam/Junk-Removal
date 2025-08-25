@@ -281,12 +281,22 @@ export default function ContactPage() {
           
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4 mb-8">
             {[
-              'Oregon City', 'Portland', 'Clackamas', 'Gresham', 'Milwaukie', 'Happy Valley',
-              'Lake Oswego', 'West Linn', 'Tigard', 'Beaverton', 'Tualatin', 'Gladstone'
+              { name: 'Oregon City', slug: 'oregon-city-junk-removal' },
+              { name: 'Portland', slug: 'portland-junk-removal' },
+              { name: 'Clackamas', slug: 'clackamas-junk-removal' },
+              { name: 'Gresham', slug: 'gresham-junk-removal' },
+              { name: 'Milwaukie', slug: 'milwaukie-junk-removal' },
+              { name: 'Happy Valley', slug: 'happy-valley-junk-removal' },
+              { name: 'Lake Oswego', slug: 'lake-oswego-junk-removal' },
+              { name: 'West Linn', slug: 'west-linn-junk-removal' },
+              { name: 'Tigard', slug: 'tigard-junk-removal' },
+              { name: 'Beaverton', slug: 'beaverton-junk-removal' },
+              { name: 'Tualatin', slug: 'tualatin-junk-removal' },
+              { name: 'Gladstone', slug: 'gladstone-junk-removal' }
             ].map((area, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-3 text-center hover:bg-primary-50 transition-colors duration-200">
-                <h3 className="font-semibold text-gray-900 text-sm">{area}</h3>
-              </div>
+              <Link key={index} href={`/${area.slug}`} className="bg-gray-50 rounded-lg p-3 text-center hover:bg-primary-50 transition-colors duration-200 group">
+                <h3 className="font-semibold text-gray-900 text-sm group-hover:text-primary-600 transition-colors">{area.name}</h3>
+              </Link>
             ))}
           </div>
 
