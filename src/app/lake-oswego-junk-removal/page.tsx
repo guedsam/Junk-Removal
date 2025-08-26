@@ -37,8 +37,8 @@ export default function LakeOswegoJunkRemoval() {
                 Professional junk removal and hauling services in Lake Oswego, Oregon. Same-day pickup available with eco-friendly disposal practices.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
-                <a href="tel:503-746-9999" className="btn-primary">
-                  Call (503) 746-9999
+                <a href="tel:503-753-2329" className="btn-primary">
+                  Call (503) 753-2329
                 </a>
                 <a href="/contact" className="btn-secondary">
                   Get Free Quote
@@ -95,8 +95,8 @@ export default function LakeOswegoJunkRemoval() {
             Call now for same-day junk removal service in Lake Oswego, Oregon
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="tel:503-746-9999" className="btn-primary">
-              Call (503) 746-9999 Now
+            <a href="tel:503-753-2329" className="btn-primary">
+              Call (503) 753-2329 Now
             </a>
             <a href="/contact" className="btn-secondary">
               Schedule Online

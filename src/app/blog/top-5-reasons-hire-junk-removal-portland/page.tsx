@@ -119,10 +119,10 @@ export default function BlogPost() {
               Get Free Quote
             </Link>
             <a
-              href="tel:(503)555-1234"
+              href="tel:(503)753-2329"
               className="bg-secondary-600 text-white px-6 py-3 rounded-lg font-semibold hover:bg-secondary-700 transition-colors text-center"
             >
-              Call (503) 555-1234
+              Call (503) 753-2329
             </a>
           </div>
         </div>

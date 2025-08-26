@@ -40,7 +40,7 @@ export default function FurnitureRemovalPage() {
       '@type': 'LocalBusiness',
       name: 'Oregon City Junk Removal',
       image: '/images/junk-removal/furniture-removal-oregon.webp',
-      telephone: '(503) 683-8929',
+      telephone: '(503) 753-2329',
       email: 'info@oregoncityjunkremoval.com',
       address: {
         '@type': 'PostalAddress',
@@ -108,10 +108,10 @@ export default function FurnitureRemovalPage() {
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4">
                   <a
-                    href="tel:(503)683-8929"
+                    href="tel:(503)753-2329"
                     className="bg-[#c75c26] hover:bg-[#b54d1f] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200 text-center"
                   >
-                    Call (503) 683-8929
+                    Call (503) 753-2329
                   </a>
                   <a
                     href="/contact"
@@ -398,10 +398,10 @@ export default function FurnitureRemovalPage() {
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <a
-                href="tel:(503)683-8929"
+                href="tel:(503)753-2329"
                 className="bg-[#c75c26] hover:bg-[#b54d1f] text-white px-8 py-4 rounded-lg font-semibold text-lg transition-colors duration-200"
               >
-                Call (503) 683-8929
+                Call (503) 753-2329
               </a>
               <a
                 href="/contact"
