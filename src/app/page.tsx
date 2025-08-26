@@ -554,7 +554,7 @@ export default function HomePage() {
             {blogPosts.map((post, index) => (
               <article key={index} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <img 
-                  src={`/images/junk-removal/${index === 0 ? 'professional-junk-removal-crew.webp' : index === 1 ? 'furniture-removal-oregon.webp' : 'professional-junk-removal-crew.webp'}`}
+                  src={`/images/junk-removal/${index === 0 ? 'office-cleanout-commercial-portland.webp' : index === 1 ? 'spring-cleaning-junk-removal.webp' : 'professional-junk-removal-crew.webp'}`}
                   alt={post.title}
                   className="w-full h-48 object-cover"
                 />
