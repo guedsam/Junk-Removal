@@ -375,7 +375,10 @@ export default function ServicesPage() {
                   'Hot tubs and spas',
                   'Carpeting and flooring',
                   'Books and paper',
-                  'Clothing and textiles'
+                  'Clothing and textiles',
+                  'Car batteries',
+                  'Paints and solvents',
+                  'Tires'
                 ].map((item, index) => (
                   <div key={index} className="flex items-start space-x-2">
                     <svg className="w-4 h-4 text-green-600 mt-1 flex-shrink-0" fill="currentColor" viewBox="0 0 20 20">
@@ -401,15 +404,12 @@ export default function ServicesPage() {
               <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
                 {[
                   'Hazardous chemicals',
-                  'Paint and solvents',
                   'Asbestos materials',
                   'Medical waste',
                   'Radioactive materials',
                   'Explosives or ammunition',
                   'Gasoline and fuel',
                   'Propane tanks',
-                  'Car batteries',
-                  'Tires (some exceptions)',
                   'Food waste',
                   'Human/animal waste'
                 ].map((item, index) => (

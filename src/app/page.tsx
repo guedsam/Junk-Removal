@@ -285,7 +285,7 @@ export default function HomePage() {
                 <p className="text-xl text-gray-600 leading-relaxed">
                   Professional junk hauling services with same-day pickup available. 
                   Eco-friendly disposal, transparent pricing, and 100% satisfaction guaranteed. 
-                  Serving Oregon City, Portland, and surrounding areas since 2015.
+                  Serving Oregon City, Portland, and surrounding areas.
                 </p>
               </div>
               

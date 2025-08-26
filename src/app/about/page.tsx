@@ -53,9 +53,7 @@ export default function AboutPage() {
   ]
 
   const stats = [
-    { number: '5000+', label: 'Jobs Completed' },
     { number: '85%', label: 'Items Recycled/Donated' },
-    { number: '24/7', label: 'Customer Support' },
     { number: '100%', label: 'Satisfaction Rate' }
   ]
 
@@ -72,7 +70,7 @@ export default function AboutPage() {
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 Your trusted local partner for eco-friendly junk removal services in Oregon City, 
-                Portland, and surrounding areas. Family-owned and community-focused since 2018.
+                Portland, and surrounding areas. Family-owned and community-focused.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="btn-primary">
@@ -94,7 +92,8 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Our Story */}
+      {/* Our Story - Hidden for now, may be added back with different wording */}
+      {/* 
       <section className="section-padding bg-white">
         <div className="container-max">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
@@ -132,6 +131,7 @@ export default function AboutPage() {
           </div>
         </div>
       </section>
+      */}
 
       {/* Mission Statement */}
       <section className="section-padding bg-gray-50">
@@ -277,7 +277,7 @@ export default function AboutPage() {
             Ready to Experience the Difference?
           </h2>
           <p className="text-xl text-primary-100 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied customers who trust Andrew and Sons Junk Removal 
+            Join all of our satisfied customers who trust Andrew and Sons Junk Removal 
             for their junk hauling needs.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
