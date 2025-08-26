@@ -73,16 +73,12 @@ export default function SmallBusinessOfficeCleanoutPage() {
               Budget Constraints and Cost Management
             </h3>
             <p className="mb-6">
-              Small businesses typically operate with tighter budgets than large corporations, making cost-effective cleanout solutions essential. Every dollar spent on office transitions must provide clear value, and unexpected expenses can significantly impact cash flow. Professional cleanout services help small businesses manage costs through:
+              Small businesses typically operate with tighter budgets than large corporations, making cost-effective cleanout solutions essential. Every dollar spent on office transitions must provide clear value, and unexpected expenses can significantly impact cash flow. Professional cleanout services help small businesses manage costs by providing transparent, upfront pricing with no hidden fees, ensuring you know exactly what to expect before work begins.
             </p>
 
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li>Transparent, upfront pricing with no hidden fees</li>
-              <li>Volume-based pricing that scales with actual needs</li>
-              <li>Donation services that may provide tax deductions</li>
-              <li>Efficient scheduling that minimizes business disruption</li>
-              <li>Asset recovery services for valuable equipment and furniture</li>
-            </ul>
+            <p className="mb-6">
+              Our volume-based pricing scales with your actual needs, meaning you only pay for what requires removal rather than flat rates that might not reflect your specific situation. Additionally, our donation services can provide valuable tax deductions that help offset cleanout costs, while our efficient scheduling minimizes business disruption and associated productivity losses. Many small businesses are also surprised to discover that our asset recovery services for valuable equipment and furniture can actually generate revenue, turning what seemed like an expense into a potential profit center.
+            </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
               Time Sensitivity and Business Continuity

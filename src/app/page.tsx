@@ -188,22 +188,22 @@ export default function HomePage() {
 
   const blogPosts = [
     {
+      title: 'Small Business Office Cleanout Services in Portland: Streamline Your Business Transitions',
+      excerpt: 'Professional small business office cleanout and commercial junk removal services for Portland startups, relocations, closures, and renovations.',
+      slug: 'small-business-office-cleanout-portland',
+      date: 'January 30, 2025'
+    },
+    {
+      title: 'Holiday Decoration Storage and Removal Services in Portland: Transform Your Post-Holiday Cleanup',
+      excerpt: 'Professional holiday decoration removal and storage solutions in Portland with eco-friendly disposal and donation services.',
+      slug: 'holiday-decoration-storage-removal-portland',
+      date: 'January 28, 2025'
+    },
+    {
       title: 'Senior Downsizing & Junk Removal Services in Portland: Compassionate Support for Life Transitions',
       excerpt: 'Professional senior downsizing and junk removal services with compassionate support for seniors transitioning to smaller homes.',
       slug: 'senior-downsizing-junk-removal-portland',
       date: 'August 24, 2025'
-    },
-    {
-      title: 'Furniture Donation & Disposal in Portland Oregon: Give Back to Your Community',
-      excerpt: 'Learn how to donate furniture in Portland and Oregon City. Professional furniture removal with charity partnerships.',
-      slug: 'furniture-donation-disposal-portland-oregon',
-      date: 'February 12, 2025'
-    },
-    {
-      title: 'Appliance Disposal & Recycling in Portland Oregon: Eco-Friendly Solutions',
-      excerpt: 'Professional appliance disposal and recycling services in Portland and Oregon City. EPA-compliant removal of appliances.',
-      slug: 'appliance-disposal-recycling-portland-oregon',
-      date: 'February 10, 2025'
     }
   ]
 

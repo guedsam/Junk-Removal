@@ -73,18 +73,12 @@ export default function HolidayDecorationRemovalPage() {
               Common Holiday Decoration Challenges
             </h3>
             <p className="mb-6">
-              Portland homeowners frequently encounter several recurring issues when dealing with holiday decorations:
+              Portland homeowners frequently encounter several recurring issues when dealing with holiday decorations. Many families struggle with broken or damaged decorations that are no longer safe to use, particularly older ornaments with sharp edges or electrical items that pose fire hazards. Outdated artificial trees and garlands that have lost their appeal often take up valuable storage space while serving no practical purpose.
             </p>
 
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li>Broken or damaged decorations that are no longer safe to use</li>
-              <li>Outdated artificial trees and garlands that have lost their appeal</li>
-              <li>Tangled strings of lights that are beyond repair</li>
-              <li>Excessive accumulation of decorations over multiple years</li>
-              <li>Inadequate storage space for seasonal items</li>
-              <li>Difficulty accessing attics, basements, or storage areas</li>
-              <li>Uncertainty about which items to keep, donate, or dispose of</li>
-            </ul>
+            <p className="mb-6">
+              Tangled strings of lights represent another common frustration, especially when they've been hastily stored after the holidays. Over the years, many Portland families find themselves dealing with excessive accumulation of decorations, often inheriting items from relatives or purchasing new pieces each season without disposing of older ones. Storage space becomes increasingly inadequate as collections grow, and accessing attics, basements, or storage areas can become physically challenging, particularly for seniors or those with mobility limitations. Perhaps most challenging of all is the uncertainty about which items to keep, donate, or dispose of, especially when decorations hold sentimental value but no longer serve a practical purpose.
+            </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
               The Environmental Impact of Holiday Decorations
@@ -112,16 +106,12 @@ export default function HolidayDecorationRemovalPage() {
               Sorting and Categorization Services
             </h3>
             <p className="mb-6">
-              We help families make informed decisions about their holiday decorations by providing professional sorting services. Our team works with you to categorize items into:
+              We help families make informed decisions about their holiday decorations by providing professional sorting services. Our experienced team works closely with you to thoughtfully categorize items based on their condition, sentimental value, and practical utility. Decorations in excellent condition that you want to preserve for future holidays are carefully identified and prepared for proper storage. Items that are still functional but no longer needed by your family can find new life through donations to local Portland charities, schools, and community organizations.
             </p>
 
-            <ul className="list-disc pl-6 mb-6 space-y-2">
-              <li><strong>Keep and Store:</strong> Decorations in good condition that you want to preserve</li>
-              <li><strong>Donate:</strong> Usable decorations that could benefit local Portland charities</li>
-              <li><strong>Recycle:</strong> Items with recyclable components like metal ornaments or cardboard packaging</li>
-              <li><strong>Special Disposal:</strong> Electronic decorations requiring proper e-waste handling</li>
-              <li><strong>General Disposal:</strong> Damaged items that cannot be recycled or donated</li>
-            </ul>
+            <p className="mb-6">
+              We also identify items with recyclable components, such as metal ornaments, cardboard packaging, and certain plastic decorations that can be processed through appropriate recycling channels. Electronic decorations like LED light strings, animated displays, and battery-operated items require special e-waste handling to ensure proper disposal of their electronic components. Finally, decorations that are damaged beyond repair or pose safety hazards are designated for general disposal, though we always explore recycling options first to minimize environmental impact.
+            </p>
 
             <h3 className="text-2xl font-semibold text-gray-900 mt-8 mb-4">
               Eco-Friendly Disposal and Recycling
