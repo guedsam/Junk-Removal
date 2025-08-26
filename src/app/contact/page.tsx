@@ -87,8 +87,8 @@ export default function ContactPage() {
               <p className="text-gray-600 mb-4">
                 Send us details about your junk removal needs
               </p>
-              <a href="mailto:sam@asjunkremoval.com" className="text-lg font-semibold text-primary-600 hover:text-primary-700 block mb-2">
-                sam@asjunkremoval.com
+              <a href="mailto:junk@asjunkremoval.com" className="text-lg font-semibold text-primary-600 hover:text-primary-700 block mb-2">
+                junk@asjunkremoval.com
               </a>
               <p className="text-sm text-gray-500">We respond within 2 hours</p>
             </div>
