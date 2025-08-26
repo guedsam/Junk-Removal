@@ -6,6 +6,24 @@ import { useState } from 'react'
 
 const blogPosts = [
   {
+    id: 18,
+    title: 'Small Business Office Cleanout Services in Portland: Streamline Your Business Transitions',
+    excerpt: 'Professional small business office cleanout and commercial junk removal services for Portland startups, relocations, closures, and renovations with efficient, affordable solutions.',
+    date: 'January 30, 2025',
+    readTime: '13 min read',
+    slug: 'small-business-office-cleanout-portland',
+    image: 'office-cleanout-commercial-portland.webp'
+  },
+  {
+    id: 17,
+    title: 'Holiday Decoration Storage and Removal Services in Portland: Transform Your Post-Holiday Cleanup',
+    excerpt: 'Professional holiday decoration removal and storage solutions in Portland with eco-friendly disposal, donation services, and organization tips for stress-free post-holiday cleanup.',
+    date: 'January 28, 2025',
+    readTime: '11 min read',
+    slug: 'holiday-decoration-storage-removal-portland',
+    image: 'spring-cleaning-junk-removal.webp'
+  },
+  {
     id: 16,
     title: 'Senior Downsizing & Junk Removal Services in Portland: Compassionate Support for Life Transitions',
     excerpt: 'Professional senior downsizing and junk removal services with compassionate support for seniors transitioning to smaller homes or assisted living facilities.',
