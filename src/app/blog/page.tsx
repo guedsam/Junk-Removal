@@ -6,6 +6,24 @@ import { useState } from 'react'
 
 const blogPosts = [
   {
+    id: 20,
+    title: 'Construction Debris Removal in Portland Oregon',
+    excerpt: 'Professional construction debris removal in Portland, Oregon. Safe, efficient cleanup of renovation waste, demolition materials, and construction site debris. Licensed and insured.',
+    date: 'December 15, 2024',
+    readTime: '14 min read',
+    slug: 'construction-debris-removal-portland-oregon',
+    image: 'construction-debris-removal-portland.webp'
+  },
+  {
+    id: 19,
+    title: 'Eco-Friendly Appliance Disposal in Portland',
+    excerpt: 'Professional eco-friendly appliance disposal and recycling services in Portland, Oregon. EPA-compliant removal with environmental responsibility and proper refrigerant handling.',
+    date: 'December 12, 2024',
+    readTime: '12 min read',
+    slug: 'eco-friendly-appliance-disposal-portland',
+    image: 'eco-friendly-disposal-portland.webp'
+  },
+  {
     id: 18,
     title: 'Small Business Office Cleanout Services in Portland: Streamline Your Business Transitions',
     excerpt: 'Professional small business office cleanout and commercial junk removal services for Portland startups, relocations, closures, and renovations with efficient, affordable solutions.',

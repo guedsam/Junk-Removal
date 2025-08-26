@@ -188,22 +188,22 @@ export default function HomePage() {
 
   const blogPosts = [
     {
+      title: 'Construction Debris Removal in Portland Oregon',
+      excerpt: 'Professional construction debris removal in Portland, Oregon. Safe, efficient cleanup of renovation waste, demolition materials, and construction site debris.',
+      slug: 'construction-debris-removal-portland-oregon',
+      date: 'December 15, 2024'
+    },
+    {
+      title: 'Eco-Friendly Appliance Disposal in Portland',
+      excerpt: 'Professional eco-friendly appliance disposal and recycling services in Portland, Oregon. EPA-compliant removal with environmental responsibility.',
+      slug: 'eco-friendly-appliance-disposal-portland',
+      date: 'December 12, 2024'
+    },
+    {
       title: 'Small Business Office Cleanout Services in Portland: Streamline Your Business Transitions',
       excerpt: 'Professional small business office cleanout and commercial junk removal services for Portland startups, relocations, closures, and renovations.',
       slug: 'small-business-office-cleanout-portland',
       date: 'January 30, 2025'
-    },
-    {
-      title: 'Holiday Decoration Storage and Removal Services in Portland: Transform Your Post-Holiday Cleanup',
-      excerpt: 'Professional holiday decoration removal and storage solutions in Portland with eco-friendly disposal and donation services.',
-      slug: 'holiday-decoration-storage-removal-portland',
-      date: 'January 28, 2025'
-    },
-    {
-      title: 'Senior Downsizing & Junk Removal Services in Portland: Compassionate Support for Life Transitions',
-      excerpt: 'Professional senior downsizing and junk removal services with compassionate support for seniors transitioning to smaller homes.',
-      slug: 'senior-downsizing-junk-removal-portland',
-      date: 'August 24, 2025'
     }
   ]
 
@@ -554,7 +554,7 @@ export default function HomePage() {
             {blogPosts.map((post, index) => (
               <article key={index} className="bg-white rounded-xl shadow-sm hover:shadow-lg transition-shadow duration-300 overflow-hidden">
                 <img 
-                  src={`/images/junk-removal/${index === 0 ? 'office-cleanout-commercial-portland.webp' : index === 1 ? 'spring-cleaning-junk-removal.webp' : 'professional-junk-removal-crew.webp'}`}
+                  src={`/images/junk-removal/${index === 0 ? 'construction-debris-removal-portland.webp' : index === 1 ? 'eco-friendly-disposal-portland.webp' : 'office-cleanout-commercial-portland.webp'}`}
                   alt={post.title}
                   className="w-full h-48 object-cover"
                 />
