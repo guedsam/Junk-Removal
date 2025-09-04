@@ -92,11 +92,31 @@ export default function PortlandJunkRemovalPage() {
   ]
 
   const neighborhoods = [
-    'Pearl District', 'Downtown Portland', 'Northwest District', 'Hawthorne', 'Alberta Arts District',
-    'Sellwood-Moreland', 'Woodstock', 'Richmond', 'Division/Clinton', 'Belmont District',
-    'Irvington', 'Laurelhurst', 'Kenton', 'St. Johns', 'Mississippi District',
-    'Fremont', 'Beaumont-Wilshire', 'Rose City Park', 'Hollywood District', 'Sandy Boulevard',
-    'Foster-Powell', 'Jade District', 'Montavilla', 'Mt. Tabor', 'Sunnyside'
+    { name: 'Pearl District', url: '/pearl-district-junk-removal' },
+    { name: 'Downtown Portland', url: '/downtown-portland-junk-removal' },
+    { name: 'Northwest District', url: '/northwest-district-junk-removal' },
+    { name: 'Hawthorne', url: '/hawthorne-junk-removal' },
+    { name: 'Alberta Arts District', url: '/alberta-arts-district-junk-removal' },
+    { name: 'Sellwood-Moreland', url: '/sellwood-moreland-junk-removal' },
+    { name: 'Woodstock', url: '/woodstock-junk-removal' },
+    { name: 'Richmond', url: '/richmond-junk-removal' },
+    { name: 'Division/Clinton', url: '/division-clinton-junk-removal' },
+    { name: 'Belmont District', url: '/belmont-district-junk-removal' },
+    { name: 'Irvington', url: '/irvington-junk-removal' },
+    { name: 'Laurelhurst', url: '/laurelhurst-junk-removal' },
+    { name: 'Kenton', url: '/kenton-junk-removal' },
+    { name: 'St. Johns', url: '/st-johns-junk-removal' },
+    { name: 'Mississippi District', url: '/mississippi-district-junk-removal' },
+    { name: 'Fremont', url: '/fremont-junk-removal' },
+    { name: 'Beaumont-Wilshire', url: '/beaumont-wilshire-junk-removal' },
+    { name: 'Rose City Park', url: '/rose-city-park-junk-removal' },
+    { name: 'Hollywood District', url: '/hollywood-district-junk-removal' },
+    { name: 'Sandy Boulevard', url: '/sandy-boulevard-junk-removal' },
+    { name: 'Foster-Powell', url: '/foster-powell-junk-removal' },
+    { name: 'Jade District', url: '/jade-district-junk-removal' },
+    { name: 'Montavilla', url: '/montavilla-junk-removal' },
+    { name: 'Mt. Tabor', url: '/mt-tabor-junk-removal' },
+    { name: 'Sunnyside', url: '/sunnyside-junk-removal' }
   ]
 
   const whyChooseUs = [
@@ -250,9 +270,15 @@ export default function PortlandJunkRemovalPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {neighborhoods.map((neighborhood, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-200">
-                <span className="text-gray-700 font-medium text-sm">{neighborhood}</span>
-              </div>
+              <Link
+                key={index}
+                href={neighborhood.url}
+                className="block"
+              >
+                <div className="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 hover:text-primary-700 transition-colors duration-200 cursor-pointer">
+                  <span className="text-gray-700 font-medium text-sm">{neighborhood.name}</span>
+                </div>
+              </Link>
             ))}
           </div>
 
