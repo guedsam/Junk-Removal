@@ -154,9 +154,9 @@ export default function DetailedPearlDistrictJunkRemovalPage() {
       rating: 5
     },
     {
-      quote: "Transforming our downtown legal office suite required sophisticated transitions - comprehensive document management, secure disposal protocols, and impeccable timing that supported our Pearl District location's professional reputation.",
+      quote: "Transforming our downtown legal office suite required sophisticated transitions - comprehensive document management, secure disposal protocols, and impeccable timing that supported our Pearl District location's professional reputation. Business leaders demand exceptional standards.",
       business: 'Pearl District Legal Professionals',
-      person: 'Jonathan Mitchell, Managing Partner',be行业的 leaders demand exceptional standards.
+      person: 'Jonathan Mitchell, Managing Partner',
       rating: 5
     },
     {
@@ -173,8 +173,8 @@ export default function DetailedPearlDistrictJunkRemovalPage() {
     },
     {
       quote: "Premier dining establishment transitions require meticulous execution - impeccable food service equipment management, health department compliance assurance, and seamless operational continuity that supports Pearl District's culinary leadership.",
-      business: 'Lou's Restaurant Group',
-      person: 'Claire Dupont, Operations Director',
+      business: "Lou's Restaurant Group",
+      person: "Claire Dupont, Operations Director",
       rating: 5
     },
     {
