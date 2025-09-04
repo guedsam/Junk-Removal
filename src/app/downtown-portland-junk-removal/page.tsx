@@ -2,13 +2,13 @@ import Link from 'next/link'
 import type { Metadata } from 'next'
 
 export const metadata: Metadata = {
-  title: 'Portland Junk Removal | #1 Rated Junk Hauling Service | Same-Day Pickup',
-  description: 'Top-rated Portland junk removal service. Same-day pickup, eco-friendly disposal, transparent pricing. Serving all Portland neighborhoods. Call (503) 753-2329 for free quote.',
-  keywords: 'Portland junk removal, junk hauling Portland, furniture removal Portland, appliance disposal Portland, construction debris Portland, estate cleanout Portland, same day junk removal Portland Oregon',
+  title: 'Downtown Portland Junk Removal | Professional Junk Hauling Service Portland, OR',
+  description: 'Professional junk removal service in Downtown Portland. Same-day pickup, eco-friendly disposal, transparent pricing. Serving Downtown Portland and surrounding areas. Call (503) 753-2329.',
+  keywords: 'Downtown Portland junk removal, Portland junk hauling downtown, furniture removal downtown Portland, appliance disposal downtown Portland, construction debris downtown Portland, estate cleanout downtown Portland, same day junk removal Portland Oregon',
   openGraph: {
-    title: 'Portland Junk Removal | #1 Rated Junk Hauling Service',
-    description: 'Top-rated Portland junk removal service. Same-day pickup, eco-friendly disposal, transparent pricing. Serving all Portland neighborhoods.',
-    url: 'https://asjunkremoval.com/portland-junk-removal',
+    title: 'Downtown Portland Junk Removal | Professional Junk Hauling Service',
+    description: 'Professional junk removal service in Downtown Portland. Same-day pickup, eco-friendly disposal, transparent pricing.',
+    url: 'https://asjunkremoval.com/downtown-portland-junk-removal',
     siteName: 'Andrew and Sons Junk Removal',
     images: [
       {
@@ -23,22 +23,22 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Portland Junk Removal | #1 Rated Junk Hauling Service',
-    description: 'Top-rated Portland junk removal service. Same-day pickup, eco-friendly disposal, transparent pricing.',
+    title: 'Downtown Portland Junk Removal | Professional Junk Hauling Service',
+    description: 'Professional junk removal service in Downtown Portland. Same-day pickup, eco-friendly disposal, transparent pricing.',
     images: ['/images/junk-removal/portland-junk-removal-team.webp'],
   },
   alternates: {
-    canonical: 'https://asjunkremoval.com/portland-junk-removal',
+    canonical: 'https://asjunkremoval.com/downtown-portland-junk-removal',
   },
 }
 
-export default function PortlandJunkRemovalPage() {
+export default function DowntownPortlandJunkRemovalPage() {
   const services = [
     {
       title: 'Residential Junk Removal',
-      description: 'Complete home cleanouts, furniture removal, appliance disposal, and general household junk pickup throughout Portland.',
+      description: 'Complete home cleanouts, furniture removal, appliance disposal, and general household junk pickup throughout Downtown Portland.',
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 7v10a2 2 0 002 2h14a2 2 0 002-2V9a2 2 0 00-2-2H5a2 2 0 00-2-2z" />
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 5a2 2 0 012-2h4a2 2 0 012 2v0H8v0z" />
         </svg>
@@ -46,94 +46,60 @@ export default function PortlandJunkRemovalPage() {
     },
     {
       title: 'Commercial Junk Removal',
-      description: 'Office cleanouts, retail space clearing, warehouse cleanups, and commercial construction debris removal in Portland.',
+      description: 'Office cleanouts, retail space clearing, warehouse cleanups, and commercial construction debris removal in Downtown Portland.',
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 21V5a2 2 0 00-2-2H7a2 2 0 00-2 2v16m14 0h2m-2 0h-5m-9 0H3m2 0h5M9 7h1m-1 4h1m4-4h1m-1 4h1m-5 10v-5a1 1 0 011-1h2a1 1 0 011 1v5m-4 0h4" />
         </svg>
       )
     },
     {
       title: 'Construction Debris',
-      description: 'Safe removal of construction waste, renovation debris, drywall, flooring, and building materials from Portland job sites.',
+      description: 'Safe removal of construction waste, renovation debris, drywall, flooring, and building materials from Downtown Portland job sites.',
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19.428 15.428a2 2 0 00-1.022-.547l-2.387-.477a6 6 0 00-3.86.517l-.318.158a6 6 0 01-3.86.517L6.05 15.21a2 2 0 00-1.806.547M8 4h8l-1 1v5.172a2 2 0 00.586 1.414l5 5c1.26 1.26.367 3.414-1.415 3.414H4.828c-1.782 0-2.674-2.154-1.414-3.414l5-5A2 2 0 009 10.172V5L8 4z" />
         </svg>
       )
     },
     {
       title: 'Estate Cleanouts',
-      description: 'Compassionate estate cleanout services for Portland families, handling everything with care and respect during difficult times.',
+      description: 'Compassionate estate cleanout services for Downtown Portland families, handling everything with care and respect during difficult times.',
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
         </svg>
       )
     },
     {
       title: 'Furniture & Appliance Removal',
-      description: 'Professional removal of old furniture, large appliances, mattresses, and bulky items from Portland homes and businesses.',
+      description: 'Professional removal of old furniture, large appliances, mattresses, and bulky items from Downtown Portland homes and businesses.',
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20 7l-8-4-8 4m16 0l-8 4m8-4v10l-8 4m0-10L4 7m8 4v10M4 7v10l8 4" />
         </svg>
       )
     },
     {
       title: 'Yard Waste Removal',
-      description: 'Removal of branches, leaves, grass clippings, and landscaping debris from Portland properties year-round.',
+      description: 'Removal of branches, leaves, grass clippings, and landscaping debris from Downtown Portland properties year-round.',
       icon: (
-        <svg className="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <svg className="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 3v4M3 5h4M6 17v4m-2-2h4m5-16l2.286 6.857L21 12l-5.714 2.143L13 21l-2.286-6.857L5 12l5.714-2.143L13 3z" />
         </svg>
       )
     }
   ]
 
-  const neighborhoods = [
-    { name: 'Pearl District', url: '/pearl-district-junk-removal' },
-    { name: 'Downtown Portland', url: '/downtown-portland-junk-removal' },
-    { name: 'Northwest District', url: '/northwest-district-junk-removal' },
-    { name: 'Hawthorne', url: '/hawthorne-junk-removal' },
-    { name: 'Alberta Arts District', url: '/alberta-arts-district-junk-removal' },
-    { name: 'Sellwood-Moreland', url: '/sellwood-moreland-junk-removal' },
-    { name: 'Woodstock', url: '/woodstock-junk-removal' },
-    { name: 'Richmond', url: '/richmond-junk-removal' },
-    { name: 'Division/Clinton', url: '/division-clinton-junk-removal' },
-    { name: 'Belmont District', url: '/belmont-district-junk-removal' },
-    { name: 'Irvington', url: '/irvington-junk-removal' },
-    { name: 'Laurelhurst', url: '/laurelhurst-junk-removal' },
-    { name: 'Kenton', url: '/kenton-junk-removal' },
-    { name: 'St. Johns', url: '/st-johns-junk-removal' },
-    { name: 'Mississippi District', url: '/mississippi-district-junk-removal' },
-    { name: 'Fremont', url: '/fremont-junk-removal' },
-    { name: 'Beaumont-Wilshire', url: '/beaumont-wilshire-junk-removal' },
-    { name: 'Rose City Park', url: '/rose-city-park-junk-removal' },
-    { name: 'Hollywood District', url: '/hollywood-district-junk-removal' },
-    { name: 'Sandy Boulevard', url: '/sandy-boulevard-junk-removal' },
-    { name: 'Foster-Powell', url: '/foster-powell-junk-removal' },
-    { name: 'Jade District', url: '/jade-district-junk-removal' },
-    { name: 'Montavilla', url: '/montavilla-junk-removal' },
-    { name: 'Mt. Tabor', url: '/mt-tabor-junk-removal' },
-    { name: 'Sunnyside', url: '/sunnyside-junk-removal' }
-  ]
-
-  // Missing neighborhoods (pages need to be created)
-  // Northwest District, Hawthorne, Alberta Arts District, Sellwood-Moreland, Woodstock, Richmond,
-  // Division/Clinton, Belmont District, Irvington, Laurelhurst, Kenton, St. Johns, Mississippi District,
-  // Fremont, Beaumont-Wilshire, Rose City Park, Hollywood District, Sandy Boulevard, Foster-Powell,
-  // Jade District, Montavilla, Mt. Tabor, Sunnyside
-
   const whyChooseUs = [
     {
-      title: 'Portland Local Experts',
-      description: 'We know Portland inside and out. From Pearl District condos to Southeast Portland homes, we serve every neighborhood.',
+      title: 'Downtown Portland Local Service',
+      description: 'We know Downtown Portland inside and out. Serving the urban core with professional junk removal services.',
       icon: '🏙️'
     },
     {
       title: 'Same-Day Service',
-      description: 'Need junk removed today? We offer same-day pickup service throughout Portland with flexible scheduling.',
+      description: 'Need junk removed today? We offer same-day pickup service in Downtown Portland with flexible scheduling.',
       icon: '⚡'
     },
     {
@@ -166,12 +132,11 @@ export default function PortlandJunkRemovalPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Portland{' '}
-                <span className="text-gradient">Junk Removal</span>
+                Downtown Portland <span className="text-gradient">Junk Removal</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
-                #1 rated junk removal service in Portland. Same-day pickup, eco-friendly disposal, 
-                and transparent pricing. Serving all Portland neighborhoods from downtown to the suburbs.
+                Professional junk removal service in Downtown Portland. Same-day pickup,
+                eco-friendly disposal, and transparent pricing. Serving the heart of Portland.
               </p>
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/contact" className="btn-primary">
@@ -193,9 +158,9 @@ export default function PortlandJunkRemovalPage() {
               </div>
             </div>
             <div className="relative">
-              <img 
-                src="/images/junk-removal/portland-junk-removal-team.webp" 
-                alt="Portland junk removal team with truck"
+              <img
+                src="/images/junk-removal/portland-junk-removal-team.webp"
+                alt="Downtown Portland junk removal team"
                 className="w-full h-80 object-cover rounded-2xl shadow-2xl"
               />
             </div>
@@ -208,11 +173,11 @@ export default function PortlandJunkRemovalPage() {
         <div className="container-max">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Portland Junk Removal Services
+              Downtown Portland Junk Removal Services
             </h2>
             <p className="text-xl text-gray-600 max-w-3xl mx-auto">
-              Comprehensive junk hauling services for Portland residents and businesses. 
-              From Pearl District to Southeast Portland, we've got you covered!
+              Comprehensive junk hauling services for Downtown Portland residents and businesses.
+              From office cleanouts to construction debris removal, we've got you covered!
             </p>
           </div>
 
@@ -239,10 +204,10 @@ export default function PortlandJunkRemovalPage() {
         <div className="container-max">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Why Portland Chooses Us
+              Why Downtown Portland Chooses Us
             </h2>
             <p className="text-xl text-gray-600">
-              Local expertise, professional service, and unmatched customer satisfaction
+              Local expertise, professional service, and unmatched customer satisfaction in Downtown Portland
             </p>
           </div>
 
@@ -262,50 +227,12 @@ export default function PortlandJunkRemovalPage() {
         </div>
       </section>
 
-      {/* Neighborhoods Section */}
-      <section className="section-padding bg-white">
-        <div className="container-max">
-          <div className="text-center mb-16">
-            <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-              Portland Neighborhoods We Serve
-            </h2>
-            <p className="text-xl text-gray-600">
-              Professional junk removal throughout all Portland areas and districts
-            </p>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
-            {neighborhoods.map((neighborhood, index) => (
-              <Link
-                key={index}
-                href={neighborhood.url}
-                className="block"
-              >
-                <div className="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 hover:text-primary-700 transition-colors duration-200 cursor-pointer">
-                  <span className="text-gray-700 font-medium text-sm">{neighborhood.name}</span>
-                </div>
-              </Link>
-            ))}
-          </div>
-
-          <div className="text-center mt-12">
-            <p className="text-gray-600 mb-6">
-              Don't see your Portland neighborhood? We serve all of Portland! 
-              Contact us to confirm service in your area.
-            </p>
-            <Link href="/contact" className="btn-primary">
-              Check Your Area
-            </Link>
-          </div>
-        </div>
-      </section>
-
       {/* Pricing Section */}
       <section className="section-padding bg-primary-600">
         <div className="container-max">
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold text-white mb-4">
-              Portland Junk Removal Pricing
+              Downtown Portland Junk Removal Pricing
             </h2>
             <p className="text-xl text-primary-100">
               Transparent, volume-based pricing with no hidden fees
@@ -371,10 +298,10 @@ export default function PortlandJunkRemovalPage() {
       <section className="section-padding bg-white">
         <div className="container-max text-center">
           <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
-            Ready for Portland's Best Junk Removal Service?
+            Ready for Downtown Portland's Best Junk Removal Service?
           </h2>
           <p className="text-xl text-gray-600 mb-8 max-w-2xl mx-auto">
-            Join thousands of satisfied Portland customers. Same-day service available. 
+            Join thousands of satisfied Portland customers. Same-day service available in Downtown Portland.
             Call now or get your free online quote!
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -384,6 +311,67 @@ export default function PortlandJunkRemovalPage() {
             <a href="tel:+15037532329" className="btn-secondary">
               Call (503) 753-2329 Now
             </a>
+          </div>
+        </div>
+      </section>
+
+      {/* About Downtown Portland Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-max">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
+            <div className="space-y-6">
+              <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                About Downtown Portland
+              </h2>
+              <p className="text-lg text-gray-600 leading-relaxed">
+                Downtown Portland is the bustling urban center of Portland, known for its modern skyline,
+                cultural attractions, and vibrant business district. Our professional junk removal service is proud to serve
+                this dynamic Portland neighborhood from office cleanouts to construction debris removal.
+              </p>
+              <div className="grid grid-cols-2 gap-4">
+                <div className="flex items-center space-x-3">
+                  <div className="bg-primary-100 p-2 rounded-full">
+                    <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 10V3L4 14h7v7l9-11h-7z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700">Same-Day Service</span>
+                </div>
+                <div className="flex items-center space-x-3">
+                  <div className="bg-primary-100 p-2 rounded-full">
+                    <svg className="w-5 h-5 text-primary-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                    </svg>
+                  </div>
+                  <span className="text-gray-700">Licensed & Insured</span>
+                </div>
+              </div>
+            </div>
+            <div className="relative">
+              <div className="bg-white rounded-xl p-8 shadow-lg">
+                <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
+                  Downtown Portland Service Area
+                </h3>
+                <div className="space-y-4">
+                  <div className="border-l-4 border-primary-500 pl-4">
+                    <h4 className="font-semibold text-gray-900">Covered Areas</h4>
+                    <ul className="text-gray-600 text-sm space-y-1 mt-2">
+                      <li>• Downtown Core</li>
+                      <li>• Financial District</li>
+                      <li>• Cultural District</li>
+                      <li>• Waterfront areas</li>
+                      <li>• Business districts</li>
+                    </ul>
+                  </div>
+                  <div className="bg-primary-50 p-4 rounded-lg">
+                    <p className="text-sm text-gray-700">
+                      <strong>Save $50 on your first Downtown Portland junk removal!</strong><br />
+                      Mention this offer when you call for service in Downtown Portland.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
       </section>
