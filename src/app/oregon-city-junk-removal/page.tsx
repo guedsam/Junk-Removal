@@ -98,11 +98,30 @@ export default function OregonCityJunkRemovalPage() {
   ]
 
   const oregonCityNeighborhoods = [
-    'Barclay Hills', 'Canemah', 'Caufield', 'Clackamette Cove', 'Gaffney Lane',
-    'Hazelbrook', 'Hillendale', 'Holly Lane', 'Jennings Lodge', 'McLoughlin',
-    'Newell Creek Canyon', 'Oak Grove', 'Park Place', 'Rivercrest', 'South End',
-    'Tower Vista', 'Twilight', 'Warner Milne', 'West Linn Heights', 'Redland',
-    'Beaver Creek', 'Clackamas Heights', 'Forest Grove', 'Highland', 'Maple Lane'
+    { name: 'Barclay Hills', url: '/barclay-hills-junk-removal' },
+    { name: 'Canemah', url: '/canemah-junk-removal' },
+    { name: 'Caufield', url: '/caufield-junk-removal' },
+    { name: 'Gaffney Lane', url: '/gaffney-lane-junk-removal' },
+    { name: 'Hazelbrook', url: '/hazelbrook-junk-removal' },
+    { name: 'Hillendale', url: '/hillendale-junk-removal' },
+    { name: 'Holly Lane', url: '/holly-lane-junk-removal' },
+    { name: 'Jennings Lodge', url: '/jennings-lodge-junk-removal' },
+    { name: 'McLoughlin', url: '/mcloughlin-junk-removal' },
+    { name: 'Newell Creek Canyon', url: '/newell-creek-canyon-junk-removal' },
+    { name: 'Oak Grove', url: '/oak-grove-junk-removal' },
+    { name: 'Park Place', url: '/park-place-junk-removal' },
+    { name: 'Rivercrest', url: '/rivercrest-junk-removal' },
+    { name: 'South End', url: '/south-end-junk-removal' },
+    { name: 'Tower Vista', url: '/tower-vista-junk-removal' },
+    { name: 'Twilight', url: '/twilight-junk-removal' },
+    { name: 'Warner Milne', url: '/warner-milne-junk-removal' },
+    { name: 'West Linn Heights', url: '/west-linn-heights-junk-removal' },
+    { name: 'Redland', url: '/redland-junk-removal' },
+    { name: 'Beaver Creek', url: '/beaver-creek-junk-removal' },
+    { name: 'Clackamas Heights', url: '/clackamas-heights-junk-removal' },
+    { name: 'Forest Grove', url: '/forest-grove-junk-removal' },
+    { name: 'Highland', url: '/highland-junk-removal' },
+    { name: 'Maple Lane', url: '/maple-lane-junk-removal' }
   ]
 
   const whyChooseUs = [
@@ -274,9 +293,15 @@ export default function OregonCityJunkRemovalPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
             {oregonCityNeighborhoods.map((neighborhood, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-4 text-center hover:bg-[#053254] hover:text-white transition-colors duration-200">
-                <span className="font-medium">{neighborhood}</span>
-              </div>
+              <Link
+                key={index}
+                href={neighborhood.url}
+                className="block"
+              >
+                <div className="bg-gray-50 rounded-lg p-4 text-center hover:bg-[#053254] hover:text-white transition-colors duration-200 cursor-pointer">
+                  <span className="font-medium">{neighborhood.name}</span>
+                </div>
+              </Link>
             ))}
           </div>
 
