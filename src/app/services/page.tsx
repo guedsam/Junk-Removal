@@ -447,13 +447,25 @@ export default function ServicesPage() {
 
           <div className="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 gap-4">
             {[
-              'Oregon City', 'Portland', 'Clackamas', 'Gresham', 'Milwaukie', 'Happy Valley',
-              'Lake Oswego', 'West Linn', 'Tigard', 'Beaverton', 'Tualatin', 'Gladstone'
+              { name: 'Oregon City', url: '/oregon-city-junk-removal' },
+              { name: 'Portland', url: '/portland-junk-removal' },
+              { name: 'Clackamas', url: '/clackamas-junk-removal' },
+              { name: 'Gresham', url: '/gresham-junk-removal' },
+              { name: 'Milwaukie', url: '/milwaukie-junk-removal' },
+              { name: 'Happy Valley', url: '/happy-valley-junk-removal' },
+              { name: 'Lake Oswego', url: '/lake-oswego-junk-removal' },
+              { name: 'West Linn', url: '/west-linn-junk-removal' },
+              { name: 'Tigard', url: '/tigard-junk-removal' },
+              { name: 'Beaverton', url: '/beaverton-junk-removal' },
+              { name: 'Tualatin', url: '/tualatin-junk-removal' },
+              { name: 'Gladstone', url: '/gladstone-junk-removal' }
             ].map((area, index) => (
-              <div key={index} className="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-200">
-                <h3 className="font-semibold text-gray-900">{area}</h3>
-                <p className="text-sm text-gray-600 mt-1">Junk Removal</p>
-              </div>
+              <Link key={index} href={area.url} className="block">
+                <div className="bg-gray-50 rounded-lg p-4 text-center hover:bg-primary-50 transition-colors duration-200 hover:shadow-md">
+                  <h3 className="font-semibold text-gray-900 hover:text-primary-600 transition-colors">{area.name}</h3>
+                  <p className="text-sm text-gray-600 mt-1">Junk Removal →</p>
+                </div>
+              </Link>
             ))}
           </div>
 
