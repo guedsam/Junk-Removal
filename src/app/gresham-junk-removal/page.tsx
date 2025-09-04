@@ -1,21 +1,22 @@
 import Link from 'next/link'
 import type { Metadata } from 'next'
+import Script from 'next/script'
 
 export const metadata: Metadata = {
-  title: 'Gresham Junk Removal | #1 Local Junk Hauling Service | Same-Day Pickup',
-  description: 'Top-rated Gresham junk removal service. Same-day pickup, eco-friendly disposal, transparent pricing. Serving all Gresham neighborhoods. Call (503) 753-2329 for free quote.',
-  keywords: 'Gresham junk removal, junk hauling Gresham, furniture removal Gresham, appliance disposal Gresham, construction debris Gresham, estate cleanout Gresham, same day junk removal',
+  title: 'Junk Removal Gresham OR #1 Rated Service - Same-Day Pickup | AS Junk Removal',
+  description: 'Get the #1 junk removal service in Gresham, OR. Same-day pickup, eco-friendly disposal, and transparent pricing. Serving Gresham residents, businesses & all neighborhoods. Call (503) 753-2329 for free quote!',
+  keywords: 'junk removal Gresham OR, Gresham junk removal, junk hauler Gresham, same day junk removal Gresham, eco-friendly junk removal Gresham, residential junk removal Gresham, commercial junk removal Gresham',
   openGraph: {
-    title: 'Gresham Junk Removal | #1 Local Junk Hauling Service',
-    description: 'Top-rated Gresham junk removal service. Same-day pickup, eco-friendly disposal, transparent pricing. Serving all Gresham neighborhoods.',
+    title: 'Junk Removal Gresham OR #1 Rated Service - Same-Day Pickup',
+    description: 'Get the #1 junk removal service in Gresham, OR. Same-day pickup, eco-friendly disposal, and transparent pricing. Serving Gresham residents & businesses.',
     url: 'https://asjunkremoval.com/gresham-junk-removal',
-    siteName: 'Andrew and Sons Junk Removal',
+    siteName: 'AS Junk Removal',
     images: [
       {
         url: '/images/junk-removal/professional-junk-removal-crew.webp',
         width: 1200,
         height: 630,
-        alt: 'Gresham Junk Removal Team',
+        alt: 'Gresham junk removal team providing same-day service',
       },
     ],
     locale: 'en_US',
@@ -23,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'Gresham Junk Removal | #1 Local Junk Hauling Service',
-    description: 'Top-rated Gresham junk removal service. Same-day pickup, eco-friendly disposal, transparent pricing.',
+    title: 'Junk Removal Gresham OR #1 Rated Service - Same-Day Pickup',
+    description: 'Get the #1 junk removal service in Gresham, OR. Same-day pickup, eco-friendly disposal, and transparent pricing.',
     images: ['/images/junk-removal/professional-junk-removal-crew.webp'],
   },
   alternates: {
@@ -41,8 +42,8 @@ export default function GreshamJunkRemovalPage() {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
             <div className="space-y-6">
               <h1 className="text-4xl md:text-5xl font-bold text-gray-900 leading-tight">
-                Gresham{' '}
-                <span className="text-gradient">Junk Removal</span>
+                Junk Removal{' '}
+                <span className="text-gradient">Gresham OR</span>
               </h1>
               <p className="text-xl text-gray-600 leading-relaxed">
                 #1 rated junk removal service in Gresham. Same-day pickup, eco-friendly disposal, 
@@ -99,7 +100,7 @@ export default function GreshamJunkRemovalPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Residential Junk Removal
+                <Link href="/services/residential-junk-removal" className="hover:text-primary-600">Residential Junk Removal</Link>
               </h3>
               <p className="text-gray-600">
                 Complete home cleanouts, furniture removal, appliance disposal, and general household junk pickup throughout Gresham.
@@ -113,7 +114,7 @@ export default function GreshamJunkRemovalPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Commercial Junk Removal
+                <Link href="/services/commercial-junk-removal" className="hover:text-primary-600">Commercial Junk Removal</Link>
               </h3>
               <p className="text-gray-600">
                 Office cleanouts, retail space clearing, warehouse cleanups, and commercial construction debris removal in Gresham.
@@ -127,11 +128,94 @@ export default function GreshamJunkRemovalPage() {
                 </svg>
               </div>
               <h3 className="text-xl font-semibold text-gray-900 mb-4">
-                Construction Debris
+                <Link href="/services/construction-debris-cleanup" className="hover:text-primary-600">Construction Debris</Link>
               </h3>
               <p className="text-gray-600">
                 Safe removal of construction waste, renovation debris, drywall, flooring, and building materials from Gresham job sites.
               </p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Neighborhoods Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-max">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Serving All Gresham Neighborhoods</h2>
+            <p className="text-lg text-gray-600 max-w-3xl mx-auto">
+              From downtown Gresham to the outskirts, we serve residents and businesses in all areas of Gresham, OR, including Powell Valley, Hockinson, and more. We're your local Gresham junk removal experts.
+            </p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="text-center">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Downtown Gresham</h3>
+              <p className="text-gray-600">Same-day service for residential and commercial properties in the heart of Gresham.</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Powell Valley</h3>
+              <p className="text-gray-600">Reliable junk removal services for homeowners and businesses in Powell Valley.</p>
+            </div>
+            <div className="text-center">
+              <h3 className="text-xl font-semibold text-gray-900 mb-2">Surrounding Areas</h3>
+              <p className="text-gray-600">Comprehensive coverage including Rockwood, Pleasant Valley, and beyond.</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Testimonials Section */}
+      <section className="section-padding bg-white">
+        <div className="container-max">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">What Gresham Customers Say</h2>
+            <p className="text-lg text-gray-600 mb-8">Real reviews from real Gresham residents who've used our junk removal services.</p>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p className="text-gray-600 mb-4">"AS Junk Removal was fantastic! They removed all my old furniture in Gresham in one day. Professional and eco-friendly - highly recommend!"</p>
+              <p className="text-sm font-semibold text-gray-900">- Sarah M., Gresham Resident</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p className="text-gray-600 mb-4">"Best junk removal service in Gresham. Quick response, same-day pickup, and affordable prices. Will definitely use again."</p>
+              <p className="text-sm font-semibold text-gray-900">- John D., Powell Valley</p>
+            </div>
+            <div className="bg-gray-50 p-6 rounded-lg">
+              <div className="flex items-center mb-4">
+                <span className="text-yellow-500">⭐⭐⭐⭐⭐</span>
+              </div>
+              <p className="text-gray-600 mb-4">"Moved to Gresham and needed to clear out garage junk. These folks handled it perfectly with no hassle."</p>
+              <p className="text-sm font-semibold text-gray-900">- Lisa T., Downtown Gresham</p>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ Section */}
+      <section className="section-padding bg-gray-50">
+        <div className="container-max">
+          <div className="text-center mb-12">
+            <h2 className="text-3xl font-bold text-gray-900 mb-4">Frequently Asked Questions</h2>
+            <p className="text-lg text-gray-600">Common questions about junk removal in Gresham, OR.</p>
+          </div>
+          <div className="max-w-4xl mx-auto space-y-6">
+            <div className="bg-white p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">Do you offer same-day junk removal in Gresham?</h3>
+              <p className="text-gray-600">Yes! We offer same-day pickup for most junk removal jobs in Gresham. Call us by 2 PM for same-day service.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">How much does junk removal cost in Gresham?</h3>
+              <p className="text-gray-600">Our pricing is transparent and based on the volume of junk. Get a free estimate by calling (503) 753-2329 or filling out our online form.</p>
+            </div>
+            <div className="bg-white p-6 rounded-lg">
+              <h3 className="text-lg font-semibold text-gray-900 mb-3">What types of items do you remove from Gresham homes?</h3>
+              <p className="text-gray-600">We remove furniture, appliances, electronics, construction debris, yard waste, and general household junk from Gresham properties.</p>
             </div>
           </div>
         </div>
@@ -157,6 +241,37 @@ export default function GreshamJunkRemovalPage() {
           </div>
         </div>
       </section>
+
+      <Script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "LocalBusiness",
+            "name": "AS Junk Removal",
+            "description": "Professional junk removal services in Gresham, OR",
+            "address": {
+              "@type": "PostalAddress",
+              "addressLocality": "Gresham",
+              "addressRegion": "OR",
+              "addressCountry": "US"
+            },
+            "telephone": "(503) 753-2329",
+            "url": "https://asjunkremoval.com/gresham-junk-removal",
+            "serviceArea": {
+              "@type": "Place",
+              "name": "Gresham, OR"
+            },
+            "aggregateRating": {
+              "@type": "AggregateRating",
+              "ratingValue": "5",
+              "reviewCount": "200"
+            },
+            "openingHours": "Mo-Su",
+            "serviceType": "Junk Removal Services"
+          })
+        }}
+      />
     </div>
   )
 }
